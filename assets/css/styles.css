@@ -141,7 +141,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url(https://i.pinimg.com/1200x/f8/09/99/f8099975a2d012e59bb21afe8fb2e99d.jpg);
+    background-image: url(/assets/img/background-image.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
