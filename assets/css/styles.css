@@ -22,6 +22,16 @@
     -webkit-text-fill-color: transparent;
 }
 
+/* Acrylic Text Style */
+/* Acrylic Text Style */
+.text-glass {
+    color: rgba(236, 219, 189, 0.65);
+    -webkit-text-stroke: 1px #ecdbbd;
+    paint-order: fill stroke;
+    text-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif !important;
+}
+
 /* Acrylic Floating Card */
 .glass-card {
     background: rgba(236, 219, 189, 0.5); /* Raffia variation transparent */
