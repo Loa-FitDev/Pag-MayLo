@@ -14,13 +14,6 @@
     border-bottom: 1px solid #f1dfbf;
 }
 
-.text-gradient {
-    background: linear-gradient(to right, #f1dfbf, #273f56);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 #inicio {
     display: flex;
     position: relative;
@@ -55,3 +48,4 @@
 .dark #inicio::after {
     background: rgba(15, 23, 42, 0.6);
 }
+
