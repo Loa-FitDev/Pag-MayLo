@@ -23,9 +23,35 @@
 
 #inicio {
     display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Image Layer */
+#inicio::before {
+    content: "";
+    position: absolute;
+    inset: 0;
     background-image: url(https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=1206&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    z-index: -2;
+}
+
+/* Acrylic Effect Overlay */
+#inicio::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: -1;
+}
+
+/* Dark Mode Acrylic Adjustment */
+.dark #inicio::after {
+    background: rgba(15, 23, 42, 0.6);
 }
