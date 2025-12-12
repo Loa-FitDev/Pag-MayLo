@@ -154,9 +154,9 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(7, 7, 7, 0.034);
+    background: rgba(236, 219, 189, 0.253);
     backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(6px);
     z-index: -1;
 }
 
@@ -164,4 +164,3 @@
 .dark #inicio::after {
     background: rgba(15, 23, 42, 0.6);
 }
-
