@@ -24,17 +24,27 @@
                         sans: ['Outfit', 'sans-serif'],
                     },
                     colors: {
-                        primary: '#2563eb',
-                        secondary: '#475569',
-                        dark: '#f1dfbf',
-                        textlight: '#223855',
-                        textdark: '#f1dfbf',
-                        textred: '#B22C2C',
-                        bglight: '#f1dfbf',
-                        bgdark: '#223855',
-                        bgopaco: '#c6bca9',
-                        borderblack: '#223855',
-                        borderlight: '#e2d8c3',
+                        // New Palette
+                        'cloud-burst': '#203553',
+                        'raffia': '#ecdbbd',
+                        'gunsmoke': '#898e8d',
+                        'alabaster': '#f9f9f9',
+                        'nomad': '#bfb9a9',
+                        'river-bed': '#4d5d6b',
+                        'rhino': '#273f56',
+
+                        // Semantic Mappings (Updated)
+                        primary: '#273f56', // rhino
+                        secondary: '#898e8d', // gunsmoke
+                        dark: '#ecdbbd', // raffia
+                        textlight: '#203553', // cloud-burst
+                        textdark: '#ecdbbd', // raffia
+                        textred: '#B22C2C', // Kept as is
+                        bglight: '#ecdbbd', // raffia
+                        bgdark: '#203553', // cloud-burst
+                        bgopaco: '#bfb9a9', // nomad
+                        borderblack: '#203553', // cloud-burst
+                        borderlight: '#bfb9a9', // nomad
                     }
                 }
             }
@@ -54,23 +64,21 @@
 </head>
 
 <body
-    class="font-sans antialiased text-textlight bg-slate-50 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
+    class="font-sans antialiased text-textlight bg-alabaster dark:bg-cloud-burst dark:text-alabaster transition-colors duration-300">
 
     <!-- Navbar -->
-    <header
-        class="fixed w-full top-0 z-50 glass-nav border-b border-slate-200/50 dark:border-slate-700/50 transition-all duration-300">
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-2">
-                    <span
-                        class="text-2xl font-bold bg-clip-text text-textlight dark:text-textdark ">LyM</span>
+                    <span class="text-2xl font-bold bg-clip-text text-textlight dark:text-textdark ">LyM</span>
                 </div>
 
                 <!-- Desktop Nav -->
                 <nav class="hidden md:flex space-x-8 items-center">
                     <a href="#inicio"
-                        class="text-textlight text-xl dark:text-textdark font-medium border-b-2 border-transparent dark:hover:border-borderlight hover:border-borderblack transition-all duration-200">Inicio</a>                    
+                        class="text-textlight text-xl dark:text-textdark font-medium border-b-2 border-transparent dark:hover:border-borderlight hover:border-borderblack transition-all duration-200">Inicio</a>
                     <a href="#nosotros"
                         class="text-textlight text-xl dark:text-textdark  font-medium border-b-2 border-transparent dark:hover:border-borderlight hover:border-borderblack transition-all duration-200">Nosotros</a>
                     <a href="#servicios"
@@ -80,7 +88,7 @@
 
                     <!-- Dark Mode Toggle -->
                     <button id="theme-toggle" type="button"
-                        class="text-textlight dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2.5">
+                        class="text-textlight dark:text-gunsmoke hover:bg-alabaster dark:hover:bg-rhino focus:outline-none focus:ring-4 focus:ring-nomad dark:focus:ring-river-bed rounded-lg text-sm p-2.5">
                         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -98,7 +106,7 @@
                 <div class="md:hidden flex items-center gap-4">
                     <!-- Mobile Dark Mode Toggle -->
                     <button id="theme-toggle-mobile" type="button"
-                        class="text-textlight dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2.5 md:hidden"
+                        class="text-textlight dark:text-gunsmoke hover:bg-alabaster dark:hover:bg-rhino focus:outline-none focus:ring-4 focus:ring-nomad dark:focus:ring-river-bed rounded-lg text-sm p-2.5 md:hidden"
                         onclick="document.getElementById('theme-toggle').click()">
                         <!-- Reusing the main toggle button logic by triggering it click -->
                         <span class="sr-only">Toggle Dark Mode</span>
@@ -115,7 +123,7 @@
                     </button>
 
                     <button
-                        class="text-textlight hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 focus:outline-none">
+                        class="text-textlight hover:text-primary dark:text-alabaster dark:hover:text-blue-400 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
@@ -130,27 +138,26 @@
         <!-- Hero Section -->
         <section id="inicio" class="relative h-screen pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
             <div
-                class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-slate-50 to-white dark:from-slate-800 dark:via-slate-900 dark:to-black">
+                class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-raffia via-alabaster to-alabaster dark:from-rhino via-cloud-burst to-cloud-burst">
             </div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-textdark dark:text-textdark"
-                style="text-shadow: 0 0 8px rgba(0, 0, 0, 0.753);">
-                M&L Studio <br>
-                <span class="text-textdark" style="text-shadow: 0 0 8px rgba(0,0,0,0.753);">
-                    Donde nacen tus ideas
-                </span>
+                    style="text-shadow: 0 0 8px rgba(0, 0, 0, 0.753);">
+                    L&M Studio <br>
+                    <span class="text-textdark" style="text-shadow: 0 0 8px rgba(0,0,0,0.753);">
+                        Donde nacen tus ideas
+                    </span>
                 </h1>
-                <p class="mt-4 text-2xl  text-textdark font-bold dark:text-slate-400 max-w-2xl mx-auto mb-10"
+                <p class="mt-4 text-2xl  text-textdark font-bold dark:text-gunsmoke max-w-2xl mx-auto mb-10"
                     style="text-shadow: 0 0 6px rgb(0, 0, 0);">
-                    Hacemos que tu negocio crezca: una página web profesional que responde por vos, organiza tu trabajo y atrae clientes incluso cuando no estás conectado.
+                    Hacemos que tu negocio crezca: una página web profesional que responde por vos, organiza tu trabajo
+                    y atrae clientes incluso cuando no estás conectado.
                 </p>
                 <div class="flex justify-center gap-4">
-                    <a href="#contacto"
-                        class="px-8 py-4 bg-bgdark hover:bg-bglight text-textdark hover:text-textlight font-semibold rounded-full shadow-lg  transition transform hover:-translate-y-1">
+                    <a href="#contacto" class="glass-btn glass-btn-primary">
                         Empezar Proyecto
                     </a>
-                    <a href="#nosotros"
-                        class="px-8 py-4 bg-bglight dark:bg-bglight text-textlight dark:text-textlight hover:bg-bgdark hover:text-textdark dark:hover:text-textdark dark:hover:bg-bgdark font-semibold rounded-full  shadow-sm hover:shadow-md transition">
+                    <a href="#nosotros" class="glass-btn glass-btn-secondary">
                         Conocer más
                     </a>
                 </div>
@@ -158,21 +165,20 @@
         </section>
 
         <!-- Nosotros Section -->
-        <section id="nosotros" class="py-24 bg-bgopaco dark:bg-slate-900">
+        <section id="nosotros" class="py-24 bg-raffia dark:bg-cloud-burst">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div
-                    class="bg-bglight dark:bg-slate-800 rounded-3xl p-8 md:p-16 border border-borderlight shadow-gray-700 dark:border-slate-700 shadow-xl overflow-hidden relative">
+                <div class="glass-card glass-card-alt rounded-3xl p-8 md:p-16 relative overflow-hidden group">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div>
                             <h3 class="text-3xl md:text-4xl font-bold text-textlight dark:text-white mb-6">Quiénes Somos
                             </h3>
-                            <p class="text-lg text-textlight dark:text-slate-300 leading-relaxed mb-6">
+                            <p class="text-lg text-textlight dark:text-alabaster leading-relaxed mb-6">
                                 Somos <span class="font-semibold text-textlight dark:text-white">Loana y Marcos</span>,
                                 desarrolladores
                                 especializados en la creación de sitios web, aplicaciones y soluciones digitales
                                 modernas.
                             </p>
-                            <p class="text-lg text-textlight dark:text-slate-300 leading-relaxed">
+                            <p class="text-lg text-textlight dark:text-alabaster leading-relaxed">
                                 Trabajamos bajo la identidad <span
                                     class="font-semibold text-textlight dark:text-blue-400">MYL Desarrollo
                                     Web</span>, combinando diseño, tecnología y precisión para brindar resultados
@@ -180,10 +186,10 @@
                             </p>
                         </div>
                         <div
-                            class="relative h-64 md:h-full bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-inner flex items-center justify-center text-white">
+                            class="glass-card-blue relative h-64 md:h-full rounded-2xl shadow-inner flex items-center justify-center text-white">
                             <!-- Placeholder for an image -->
                             <div class="text-center p-6">
-                                <svg class="w-16 h-16 mx-auto mb-4 text-blue-200" fill="none" stroke="currentColor"
+                                <svg class="w-16 h-16 mx-auto mb-4 text-raffia" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
@@ -198,25 +204,25 @@
         </section>
 
         <!-- Servicios Section -->
-        <section id="servicios" class="py-24 bg-bgopaco dark:bg-slate-900">
+        <section id="servicios" class="py-24 bg-raffia/30 dark:bg-rhino">
             <div class="max-w-7xl mx-auto px-16 sm:px-6 lg:px-8">
                 <div class="text-center my-10">
 
 
-                    <h2 class="text-3xl md:text-4xl font-bold text-textlight dark:text-white mb-4">Nuestros Servicios
+                    <h2 class="text-3xl md:text-4xl font-bold text-cloud-burst dark:text-white mb-4">Nuestros Servicios
                     </h2>
-                    <p class="text-lg text-textlight dark:text-slate-400 max-w-2xl mx-auto">Creamos sitios modernos, rápidos y optimizados para todo tipo de proyectos.</p>
+                    <p class="text-lg text-river-bed dark:text-raffia max-w-2xl mx-auto">Creamos sitios modernos,
+                        rápidos y optimizados para todo tipo de proyectos.</p>
 
 
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Card 1 -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-100 dark:border-slate-700 group">
+                    <div class="glass-card p-8 rounded-2xl group">
                         <div
-                            class="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors"
+                            class="w-12 h-12 bg-raffia dark:bg-cloud-burst/40 rounded-lg flex items-center justify-center mb-6 group-hover:bg-rhino transition-colors">
+                            <svg class="w-6 h-6 text-cloud-burst dark:text-raffia group-hover:text-white transition-colors"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
@@ -224,171 +230,168 @@
                             </svg>
                         </div>
 
-                        <h3 class="text-xl font-bold text-textlight dark:text-white mb-3">
-                        Gastronomía y servicios de comida
+                        <h3 class="text-xl font-bold text-cloud-burst dark:text-white mb-3">
+                            Gastronomía y servicios de comida
                         </h3>
 
-                        <ul class="list-disc list-inside text-textlight dark:text-slate-400 space-y-1">
-                        <li>Menús digitales para comida rápida</li>
-                        <li>Páginas web para restaurantes</li>
-                        <li>Cafeterías y bares</li>
-                        <li>Delivery con catálogo y carrito</li>
-                        <li>Menús QR interactivos</li>
+                        <ul class="list-disc list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                            <li>Menús digitales para comida rápida</li>
+                            <li>Páginas web para restaurantes</li>
+                            <li>Cafeterías y bares</li>
+                            <li>Delivery con catálogo y carrito</li>
+                            <li>Menús QR interactivos</li>
                         </ul>
                     </div>
 
                     <!-- Card 2 -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-100 dark:border-slate-700 group">
+                    <div class="glass-card p-8 rounded-2xl group">
                         <div
-                            class="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors"
+                            class="w-12 h-12 bg-raffia dark:bg-cloud-burst/40 rounded-lg flex items-center justify-center mb-6 group-hover:bg-rhino transition-colors">
+                            <svg class="w-6 h-6 text-cloud-burst dark:text-raffia group-hover:text-white transition-colors"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-textlight dark:text-white mb-3">
-                        Belleza y bienestar
+                        <h3 class="text-xl font-bold text-cloud-burst dark:text-white mb-3">
+                            Belleza y bienestar
                         </h3>
 
-                        <ul class="list-disc list-inside text-textlight dark:text-slate-400 space-y-1">
-                        <li>Peluquerías</li>
-                        <li>Centros de estética</li>
-                        <li>Barberías</li>
-                        <li>Salones de uñas</li>
-                        <li>Reservas online</li>
+                        <ul class="list-disc list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                            <li>Peluquerías</li>
+                            <li>Centros de estética</li>
+                            <li>Barberías</li>
+                            <li>Salones de uñas</li>
+                            <li>Reservas online</li>
                         </ul>
                     </div>
 
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-100 dark:border-slate-700 group">
+                    <div class="glass-card p-8 rounded-2xl group">
                         <div
-                            class="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors"
+                            class="w-12 h-12 bg-raffia dark:bg-cloud-burst/40 rounded-lg flex items-center justify-center mb-6 group-hover:bg-rhino transition-colors">
+                            <svg class="w-6 h-6 text-cloud-burst dark:text-raffia group-hover:text-white transition-colors"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-textlight dark:text-white mb-3">
-                        Alojamiento y turismo
+                        <h3 class="text-xl font-bold text-cloud-burst dark:text-white mb-3">
+                            Alojamiento y turismo
                         </h3>
 
-                        <ul class="list-disc list-inside text-textlight dark:text-slate-400 space-y-1">
-                        <li>Hoteles</li>
-                        <li>Complejos turísticos</li>
-                        <li>Cabañas</li>
-                        <li>Reservas y disponibilidad online</li>
+                        <ul class="list-disc list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                            <li>Hoteles</li>
+                            <li>Complejos turísticos</li>
+                            <li>Cabañas</li>
+                            <li>Reservas y disponibilidad online</li>
                         </ul>
                     </div>
 
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-100 dark:border-slate-700 group">
+                    <div class="glass-card p-8 rounded-2xl group">
                         <div
-                            class="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors"
+                            class="w-12 h-12 bg-raffia dark:bg-cloud-burst/40 rounded-lg flex items-center justify-center mb-6 group-hover:bg-rhino transition-colors">
+                            <svg class="w-6 h-6 text-cloud-burst dark:text-raffia group-hover:text-white transition-colors"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-textlight dark:text-white mb-3">
-                        Salud y clínicas
+                        <h3 class="text-xl font-bold text-cloud-burst dark:text-white mb-3">
+                            Salud y clínicas
                         </h3>
 
-                            
-                        <li>Consultorios médicos</li>
-                        <li>Clínicas privadas</li>
-                        <li>Laboratorios</li>
-                        <li>Turnos online</li>
-                        <li>Presentación de servicios y especialidades</li>
+                        <ul class="list-disc list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                            <li>Consultorios médicos</li>
+                            <li>Clínicas privadas</li>
+                            <li>Laboratorios</li>
+                            <li>Turnos online</li>
+                            <li>Presentación de servicios y especialidades</li>
                         </ul>
                     </div>
 
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-100 dark:border-slate-700 group">
+                    <div class="glass-card p-8 rounded-2xl group">
                         <div
-                            class="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors"
+                            class="w-12 h-12 bg-raffia dark:bg-cloud-burst/40 rounded-lg flex items-center justify-center mb-6 group-hover:bg-rhino transition-colors">
+                            <svg class="w-6 h-6 text-cloud-burst dark:text-raffia group-hover:text-white transition-colors"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-textlight dark:text-white mb-3">
-                        Comercios y empresas
+                        <h3 class="text-xl font-bold text-cloud-burst dark:text-white mb-3">
+                            Comercios y empresas
                         </h3>
 
-                        <ul class="list-disc list-inside text-textlight dark:text-slate-400 space-y-1">
-                        <li>Empresas de servicios</li>
-                        <li>Emprendimientos</li>
-                        <li>Catálogos digitales</li>
-                        <li>E-commerce</li>
+                        <ul class="list-disc list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                            <li>Empresas de servicios</li>
+                            <li>Emprendimientos</li>
+                            <li>Catálogos digitales</li>
+                            <li>E-commerce</li>
                         </ul>
                     </div>
 
                     <!-- Card 3 -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-100 dark:border-slate-700 group">
+                    <div class="glass-card p-8 rounded-2xl group">
                         <div
-                            class="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors"
+                            class="w-12 h-12 bg-raffia dark:bg-cloud-burst/40 rounded-lg flex items-center justify-center mb-6 group-hover:bg-rhino transition-colors">
+                            <svg class="w-6 h-6 text-cloud-burst dark:text-raffia group-hover:text-white transition-colors"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-textlight dark:text-white mb-3">
-                        Medios y comunicación
+                        <h3 class="text-xl font-bold text-cloud-burst dark:text-white mb-3">
+                            Medios y comunicación
                         </h3>
 
-                        <ul class="list-disc list-inside text-textlight dark:text-slate-400 space-y-1">
-                        <li>Portales de noticias</li>
-                        <li>Revistas digitales</li>
-                        <li>Blogs profesionales</li>
+                        <ul class="list-disc list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                            <li>Portales de noticias</li>
+                            <li>Revistas digitales</li>
+                            <li>Blogs profesionales</li>
                         </ul>
                     </div>
                 </div>
-                <p class="text-lg text-center text-textred p-10 dark:text-slate-400 max-w-2xl mx-auto font-bold">Si tu proyecto no encaja en los rubros siguientes, también desarrollamos soluciones completamente a medida según tus necesidades.</p>
+                <p class="text-lg text-center text-textred p-10 dark:text-gunsmoke max-w-2xl mx-auto font-bold">Si tu
+                    proyecto no encaja en los rubros siguientes, también desarrollamos soluciones completamente a medida
+                    según tus necesidades.</p>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contacto" class="py-24 bg-bgopaco dark:bg-slate-900 relative overflow-hidden">
+        <section id="contacto" class="py-24 bg-raffia dark:bg-cloud-burst relative overflow-hidden">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-textlight dark:text-white mb-4">Contáctanos</h2>
-                    <p class="text-lg text-textlight dark:text-slate-400">¿Tienes una idea en mente? Hablemos.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-cloud-burst dark:text-white mb-4">Contáctanos</h2>
+                    <p class="text-lg text-river-bed dark:text-gunsmoke">¿Tienes una idea en mente? Hablemos.</p>
                 </div>
 
                 <form
-                    class="space-y-6 bg-white dark:bg-slate-800 p-8 md:p-10 rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-700">
+                    class="glass-card glass-card-alt space-y-6 p-8 md:p-10 rounded-3xl relative overflow-hidden group">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="name"
-                                class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Nombre</label>
+                                class="block text-sm font-medium text-river-bed dark:text-alabaster mb-2">Nombre</label>
                             <input type="text" id="name"
-                                class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 dark:bg-slate-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition"
+                                class="w-full px-4 py-3 rounded-xl border border-nomad dark:border-river-bed dark:bg-cloud-burst dark:text-alabaster focus:border-rhino focus:ring-2 focus:ring-rhino/20 outline-none transition"
                                 placeholder="Tu nombre">
                         </div>
                         <div>
                             <label for="email"
-                                class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Email</label>
+                                class="block text-sm font-medium text-river-bed dark:text-alabaster mb-2">Email</label>
                             <input type="email" id="email"
-                                class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 dark:bg-slate-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition"
+                                class="w-full px-4 py-3 rounded-xl border border-nomad dark:border-river-bed dark:bg-cloud-burst dark:text-alabaster focus:border-rhino focus:ring-2 focus:ring-rhino/20 outline-none transition"
                                 placeholder="tu@email.com">
                         </div>
                     </div>
                     <div>
                         <label for="message"
-                            class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Mensaje</label>
+                            class="block text-sm font-medium text-river-bed dark:text-alabaster mb-2">Mensaje</label>
                         <textarea id="message" rows="4"
-                            class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 dark:bg-slate-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition"
+                            class="w-full px-4 py-3 rounded-xl border border-nomad dark:border-river-bed dark:bg-cloud-burst dark:text-alabaster focus:border-rhino focus:ring-2 focus:ring-rhino/20 outline-none transition"
                             placeholder="Cuéntanos sobre tu proyecto..."></textarea>
                     </div>
                     <button type="button"
-                        class="w-full py-4 bg-slate-900 dark:bg-blue-600 hover:bg-slate-800 dark:hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5">
+                        class="w-full py-4 bg-rhino dark:bg-primary hover:bg-secondary dark:hover:bg-cloud-burst text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5">
                         Enviar Mensaje
                     </button>
                 </form>
@@ -396,15 +399,15 @@
         </section>
     </main>
 
-    <footer class="bg-bgdark dark:bg-black text-slate-300 py-12">
+    <footer class="bg-bgdark dark:bg-cloud-burst text-nomad py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-            <div class="text-2xl font-bold text-white mb-4">LyM</div>
+            <div class="text-2xl font-bold text-alabaster mb-4">LyM</div>
             <div class="flex space-x-6 mb-8">
-                <a href="#" class="hover:text-white transition-colors">Instagram</a>
-                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
-                <a href="#" class="hover:text-white transition-colors">Twitter</a>
+                <a href="#" class="hover:text-alabaster transition-colors">Instagram</a>
+                <a href="#" class="hover:text-alabaster transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-alabaster transition-colors">Twitter</a>
             </div>
-            <p class="text-sm text-textlight">© 2025 LyM Desarrollo Web. Todos los derechos reservados.</p>
+            <p class="text-sm text-nomad">© 2025 LyM Desarrollo Web. Todos los derechos reservados.</p>
         </div>
     </footer>
 
