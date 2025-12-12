@@ -129,6 +129,7 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
+
 #inicio {
     display: flex;
     position: relative;
@@ -140,7 +141,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url(https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=1206&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-image: url(https://i.pinimg.com/1200x/f8/09/99/f8099975a2d012e59bb21afe8fb2e99d.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -153,9 +154,9 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(189, 180, 180, 0.205);
+    background: rgba(7, 7, 7, 0.034);
     backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(50px);
     z-index: -1;
 }
 
@@ -163,3 +164,4 @@
 .dark #inicio::after {
     background: rgba(15, 23, 42, 0.6);
 }
+
