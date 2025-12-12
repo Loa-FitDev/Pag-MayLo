@@ -3,16 +3,132 @@
 @tailwind utilities;
 
 .glass-nav {
-    background: #f1dfbfb4;
+    background: rgba(236, 219, 189, 0.7); /* raffia with opacity */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: background-color 0.3s ease;
+    border-bottom: 2px solid #ecdbbd; /* Strong Solid Raffia Border */
 }
 
 .dark .glass-nav {
-    background: #223851;
-    border-bottom: 1px solid #f1dfbf;
+    background: #203553; /* cloud-burst */
+    border-bottom: 2px solid #ecdbbd; /* Consistent Raffia border in dark mode too */
 }
+
+.text-gradient {
+    background: linear-gradient(to right, #ecdbbd, #273f56); /* raffia to rhino */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Acrylic Text Style */
+/* Acrylic Text Style */
+.text-glass {
+    color: rgba(236, 219, 189, 0.65);
+    -webkit-text-stroke: 1px #ecdbbd;
+    paint-order: fill stroke;
+    text-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Acrylic Floating Card */
+.glass-card {
+    background: rgba(236, 219, 189, 0.5); /* Raffia variation transparent */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid #ecdbbd; /* Strong Solid Raffia Border */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    background: rgba(236, 219, 189, 0.75); /* Stronger Raffia on hover */
+    border-color: #ecdbbd;
+}
+
+/* Alternative Glass Card for Low Contrast Backgrounds (e.g. on solid Raffia) */
+.glass-card-alt {
+    background: rgba(255, 255, 255, 0.4); /* White transparent for contrast */
+    border-color: rgba(255, 255, 255, 0.689);
+}
+
+.glass-card-alt:hover {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Blue Glass Card (Dark Acrylic) */
+.glass-card-blue {
+    background: rgba(39, 63, 86, 0.9); /* High opacity Rhino to fix "sick/pale" look */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid #203553; /* Cloud Burst (Stringer/Darker Blue) border */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Glass Buttons */
+.glass-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    text-align: center;
+    cursor: pointer;
+}
+
+.glass-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+
+.glass-btn-primary {
+    background: rgba(32, 53, 83, 0.75); /* Cloud Burst / Rhino with transparency */
+    border: 2px solid #203553; /* Cloud Burst border for consistent acrylic look */
+    color: #ecdbbd; /* Raffia text */
+}
+
+.glass-btn-primary:hover {
+    background: rgba(32, 53, 83, 0.9);
+    box-shadow: 0 0 20px rgba(236, 219, 189, 0.4);
+}
+
+.glass-btn-secondary {
+    background: rgba(236, 219, 189, 0.65); /* Raffia with opacity matching glass-nav */
+    border: 2px solid #ecdbbd; /* Raffia border matching glass-nav */
+    color: #203553; /* Cloud Burst text for contrast */
+    text-shadow: none;
+}
+
+.glass-btn-secondary:hover {
+    background: rgba(236, 219, 189, 0.85);
+    box-shadow: 0 0 20px rgba(32, 53, 83, 0.4);
+}
+
+.dark .glass-card {
+    background: rgba(32, 53, 83, 0.6); /* Cloud-burst transparent */
+    border: 1px solid rgba(236, 219, 189, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.dark .glass-card:hover {
+    background: rgba(32, 53, 83, 0.8);
+    border-color: rgba(236, 219, 189, 0.3);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.dark .glass-card-alt {
+    background: rgba(255, 255, 255, 0.05); /* Subtle light tint in dark mode */
+}
+.dark .glass-card-alt:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 
 #inicio {
     display: flex;
