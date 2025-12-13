@@ -67,6 +67,80 @@ body, html {
     display: none !important;
 }
 
+/* FAQ Glass Morphism Styles */
+.faq-details {
+    background: rgba(236, 219, 189, 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid #ecdbbd;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+}
+
+.dark .faq-details {
+    background: rgba(39, 63, 86, 0.5);
+    border-color: #ecdbbd;
+}
+
+.faq-details:hover {
+    background: rgba(236, 219, 189, 0.75);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark .faq-details:hover {
+    background: rgba(39, 63, 86, 0.75);
+}
+
+.faq-summary {
+    padding: 1rem 1rem;
+    color: #203553;
+    list-style: none;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.dark .faq-summary {
+    color: #ecdbbd;
+}
+
+.faq-summary:hover {
+    color: #273f56;
+}
+
+.dark .faq-summary:hover {
+    color: #ffffff;
+}
+
+.faq-summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-summary::before {
+    content: '+';
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+details[open] .faq-summary::before {
+    transform: rotate(45deg);
+}
+
+.faq-content {
+    padding: 1rem 1rem;
+    border-top: 1px solid rgba(236, 219, 189, 0.3);
+    color: #4d5d6b;
+}
+
+.dark .faq-content {
+    border-top-color: rgba(236, 219, 189, 0.2);
+    color: #898e8d;
+}
+
 /* Alternative Glass Card for Low Contrast Backgrounds (e.g. on solid Raffia) */
 .glass-card-alt {
     background: rgba(255, 255, 255, 0.4); /* White transparent for contrast */
