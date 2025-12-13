@@ -238,3 +238,48 @@
      background: rgba(32, 53, 83, 0.6);
      border-color: rgba(236, 219, 189, 0.3);
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #203553;
+    background-color: rgba(236, 219, 189, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(236, 219, 189, 0.8);
+}
+
+.dark .swiper-button-next,
+.dark .swiper-button-prev {
+    color: #ecdbbd;
+    background-color: rgba(32, 53, 83, 0.5);
+}
+
+.dark .swiper-button-next:hover,
+.dark .swiper-button-prev:hover {
+    background-color: rgba(32, 53, 83, 0.8);
+}
+
+.swiper-pagination-bullet {
+    background-color: #203553;
+}
+
+.dark .swiper-pagination-bullet {
+    background-color: #ecdbbd;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #273f56;
+}
+
+.dark .swiper-pagination-bullet-active {
+    background-color: #bfb9a9;
+}
