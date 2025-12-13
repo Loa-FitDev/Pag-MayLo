@@ -74,3 +74,41 @@ document.addEventListener("click", function (event) {
     header.classList.remove("menu-open");
   }
 });
+
+// Smooth scroll enhancement with scroll progress indicator
+document.addEventListener("DOMContentLoaded", function() {
+  // Add scroll progress listener for better scroll feedback
+  let ticking = false;
+  
+  window.addEventListener("scroll", function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        
+        // Update scroll position for potential scroll bar indicator
+        document.documentElement.style.setProperty('--scroll-progress', scrollPercent + '%');
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  
+  // Enhance anchor link scrolling with smooth behavior
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && document.querySelector(href)) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        
+        // Use native smooth scroll with custom easing
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+});

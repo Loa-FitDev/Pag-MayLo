@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scroll behavior enhancement */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 0px;
+}
+
 /* Hide horizontal scrollbar */
 body, html {
     overflow-x: hidden;
