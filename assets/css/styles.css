@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hide horizontal scrollbar */
+body, html {
+    overflow-x: hidden;
+}
+
 .glass-nav {
     background: rgba(236, 219, 189, 0.7); /* raffia with opacity */
     backdrop-filter: blur(12px);
@@ -46,6 +51,20 @@
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     background: rgba(236, 219, 189, 0.75); /* Stronger Raffia on hover */
     border-color: #ecdbbd;
+}
+
+.swiper-wrapper {
+    align-items: stretch;
+}
+
+/* Hide Swiper pagination and navigation */
+.swiper-pagination {
+    display: none !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    display: none !important;
 }
 
 /* Alternative Glass Card for Low Contrast Backgrounds (e.g. on solid Raffia) */
