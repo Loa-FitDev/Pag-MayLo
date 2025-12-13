@@ -69,7 +69,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body
@@ -192,24 +192,66 @@
 
                     <div class="grid md:grid-cols-1 gap-12 items-center">
                         <div>
-                            <h3 class="text-3xl md:text-4xl font-bold text-textlight dark:text-textdark mb-8">Quiénes
+                            <h3 class="text-3xl md:text-4xl text-center font-bold text-textlight dark:text-textdark mb-8">Quiénes
                                 Somos
                             </h3>
-                            <p class="text-lg text-textlight dark:text-textdark leading-relaxed mb-6">
-                                Somos Loana y Marcos, un equipo de desarrollo de San Justo, Santa Fe. Nos dedicamos a
-                                crear sitios web y
-                                soluciones digitales pensadas para que cada proyecto se vea profesional, funcione bien y
-                                ayude a nuestros clientes a crecer.
+                                <div class="flex flex-col md:flex-row items-start justify-center gap-16">
+                                    <div class="bg-slate-100 glass-card rounded-3xl p-8 md:p-12 animate-fade-in-up dark:bg-slate-800 rounded-3xl p-10 shadow-lg border border-slate-200 dark:border-slate-700
+                                    text-center max-w-lg ">                                       
+                                        <img src="/assets/img/Loana.png"
+                                            alt="Foto Loana"
+                                            class="w-32 h-32 rounded-full object-cover shadow-lg mx-auto mb-4"
+                                            loading="lazy" />
+                                        <h4 class="text-lg font-semibold text-textlight dark:text-textdark mb-2">
+                                            Loana Vera
+                                        </h4>
+                                        <p class="text-base text-textlight/80 dark:text-textdark/80 leading-relaxed">
+                                            Loana se enfoca en el desarrollo de soluciones digitales a medida, combinando funcionalidad, diseño y experiencia de
+                                            usuario.
+                                            Su trabajo prioriza interfaces claras, estéticas y eficientes, pensadas para que cada proyecto sea intuitivo y
+                                            profesional.
+                                        </p>
+                                    </div>
+                                    <div class="bg-slate-100 glass-card rounded-3xl p-8 md:p-12 animate-fade-in-up dark:bg-slate-800 rounded-3xl p-10 shadow-lg border border-slate-200 dark:border-slate-700
+                                    text-center max-w-lg">                                       
+                                        <img src="/assets/img/Marcos.png"
+                                            alt="Foto Marcos"
+                                            class="w-32 h-32 rounded-full object-cover shadow-lg mx-auto mb-4"
+                                            loading="lazy" />
+                                        <h4 class="text-lg font-semibold text-textlight dark:text-textdark mb-2">
+                                            Marcos Lescano
+                                        </h4>
+                                        <p class="text-base text-textlight/80 dark:text-textdark/80 leading-relaxed">
+                                            Marcos es desarrollador web con sólida formación en Tecnologías de la Información.
+                                            Se especializa en la construcción de soluciones robustas, escalables y optimizadas, cuidando tanto la arquitectura
+                                            como el rendimiento de cada proyecto.
+                                        </p>
+                                    </div>
+                                </div>
+                            <p class="text-lg mt-10 text-textlight dark:text-textdark leading-relaxed">
+                                Somos Loana y Marcos, un equipo de desarrollo de San Justo, Santa Fe.
                             </p>
-                            <p class="text-lg text-textlight dark:text-textdark leading-relaxed mb-6">
-                                Trabajamos bajo la identidad MYL Studio, combinando diseño, tecnología y precisión para
-                                brindar resultados excepcionales.
+                            <p class="text-lg  text-textlight dark:text-textdark leading-relaxed">
+                                Nos dedicamos a crear sitios web y soluciones digitales pensadas para que cada proyecto se vea profesional, funcione
+                                correctamente y ayude a nuestros clientes a crecer.
                             </p>
                             <p class="text-lg text-textlight dark:text-textdark leading-relaxed">
-                                Aunque trabajamos desde nuestra ciudad, colaboramos con personas y empresas de cualquier
-                                lugar. Estamos acostumbrados a manejar proyectos a distancia, mantener una comunicación
-                                clara y organizarnos de forma online para que todo sea simple y transparente.
-                                Nos seguimos formando para ofrecer trabajos modernos, rápidos y bien diseñados.
+                                Trabajamos bajo la identidad MYL Studio, combinando diseño, tecnología y precisión para brindar resultados excepcionales.
+                            </p>
+                            <h3 class="text-3xl md:text-4xl text-center font-bold text-textlight dark:text-textdark mt-5 mb-5">Cómo Trabajamos
+                            </h3>
+                            <p class="text-lg text-textlight dark:text-textdark leading-relaxed">
+                                Aunque desarrollamos desde nuestra ciudad, colaboramos con personas y empresas de cualquier lugar.
+                                Estamos acostumbrados a gestionar proyectos a distancia, mantener una comunicación clara y organizarnos de forma online, para que todo el proceso sea simple y transparente.
+                            </p>
+                            <p class="text-lg text-textlight dark:text-textdark leading-relaxed">
+                                Nos seguimos formando constantemente para ofrecer trabajos modernos, rápidos y bien diseñados.
+                            </p>
+                            <h3 class="text-3xl md:text-4xl font-bold mt-10 text-textlight text-center dark:text-textdark mb-5 mt-5">Trabajo en Equipo
+                            </h3>
+                            <p class="text-lg text-textlight dark:text-textdark leading-relaxed">
+                                Como equipo, trabajamos de manera colaborativa en cada proyecto, sin divisiones de roles fijas.
+                                Compartimos decisiones técnicas y creativas para garantizar un desarrollo completo, coherente y de alta calidad, desde el inicio hasta la entrega final.
                             </p>
                         </div>
                     </div>
@@ -671,7 +713,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/theme.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         function equalizeCardHeights() {
