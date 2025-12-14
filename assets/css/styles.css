@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-col 0.3s ease;
+}
+
 /* Smooth scroll behavior enhancement */
 html {
     scroll-behavior: smooth;
@@ -121,8 +125,8 @@ body, html {
 }
 
 .dark .glass-nav {
-    background: #203553; /* cloud-burst */
-    border-bottom: 2px solid #ecdbbd; /* Consistent Raffia border in dark mode too */
+    background: rgba(32, 53, 83, 0.7); /* cloud-burst con transparencia*/
+    border-bottom: 2px solid #203553;
 }
 
 .dark .glass-nav.menu-open {
@@ -249,7 +253,11 @@ details[open] .faq-summary::before {
 
 .dark .faq-content {
     border-top-color: rgba(236, 219, 189, 0.2);
-    color: #898e8d;
+    color: #ecdbbd; /* Changed to raffia for better visibility */
+}
+
+.dark .faq-content ul li{
+    color: #ecdbbd; /* Changed to raffia for better visibility */
 }
 
 /* Alternative Glass Card for Low Contrast Backgrounds (e.g. on solid Raffia) */
@@ -318,8 +326,8 @@ details[open] .faq-summary::before {
 }
 
 .dark .glass-card {
-    background: rgba(32, 53, 83, 0.6); /* Cloud-burst transparent */
-    border: 1px solid rgba(236, 219, 189, 0.1);
+    background: rgba(236, 219, 189, 0.07); /* raffia muy sutil */
+    border: 1px solid rgba(236, 219, 189, 0.2); /* Borde un poco más visible */
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
 
@@ -348,7 +356,7 @@ details[open] .faq-summary::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url(/assets/img/background-image.webp);
+    background-image: url(../img/background-image.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -361,7 +369,7 @@ details[open] .faq-summary::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(236, 219, 189, 0.253);
+    background: rgba(123, 123, 123, 0.253);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     z-index: -1;

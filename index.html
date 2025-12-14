@@ -59,12 +59,55 @@
     </script>
 
     <script>
-        // Check for dark mode preference immediately
+        function toggleTheme() {
+            const isDarkMode = document.documentElement.classList.toggle('dark');
+            if (isDarkMode) {
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                localStorage.setItem('color-theme', 'light');
+            }
+            updateThemeIcons(); // Update icons immediately after toggling
+        }
+
+        // Check for dark mode preference immediately on load
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
+
+        // Function to update the visibility of theme icons
+        function updateThemeIcons() {
+            const isDarkMode = document.documentElement.classList.contains('dark');
+            const darkIconDesktop = document.getElementById('theme-toggle-dark-icon');
+            const lightIconDesktop = document.getElementById('theme-toggle-light-icon');
+            const darkIconMobile = document.querySelector('#theme-toggle-mobile .dark\\:hidden');
+            const lightIconMobile = document.querySelector('#theme-toggle-mobile .hidden.dark\\:block');
+
+            if (darkIconDesktop) darkIconDesktop.classList.toggle('hidden', !isDarkMode);
+            if (lightIconDesktop) lightIconDesktop.classList.toggle('hidden', isDarkMode);
+            if (darkIconMobile) darkIconMobile.classList.toggle('hidden', !isDarkMode);
+            if (lightIconMobile) lightIconMobile.classList.toggle('hidden', isDarkMode);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
+
+            // Add event listeners to buttons
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', toggleTheme);
+            }
+            if (themeToggleMobileBtn) {
+                themeToggleMobileBtn.addEventListener('click', toggleTheme);
+            }
+
+            updateThemeIcons(); // Initial icon display on load
+
+            // Observe changes in the 'dark' class on the html element (e.g., if OS preference changes)
+            const observer = new MutationObserver(updateThemeIcons);
+            observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+        });
     </script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -98,7 +141,7 @@
 
                     <!-- Dark Mode Toggle -->
                     <button id="theme-toggle" type="button"
-                        class="glass-icon-btn text-textlight dark:text-gunsmoke focus:outline-none focus:ring-4 focus:ring-nomad dark:focus:ring-river-bed text-sm">
+                        class="glass-icon-btn text-textlight dark:text-raffia focus:outline-none focus:ring-4 focus:ring-nomad dark:focus:ring-river-bed text-sm">
                         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -116,8 +159,7 @@
                 <div class="md:hidden flex items-center gap-2 sm:gap-4">
                     <!-- Mobile Dark Mode Toggle -->
                     <button id="theme-toggle-mobile" type="button"
-                        class="text-textlight dark:text-gunsmoke hover:bg-alabaster dark:hover:bg-rhino focus:outline-none focus:ring-4 focus:ring-nomad dark:focus:ring-river-bed rounded-lg text-sm p-2.5 md:hidden"
-                        onclick="document.getElementById('theme-toggle').click()">
+                        class="text-textlight dark:text-raffia hover:bg-alabaster dark:hover:bg-rhino focus:outline-none focus:ring-4 focus:ring-nomad dark:focus:ring-river-bed rounded-lg text-sm p-2.5 md:hidden">
                         <!-- Reusing the main toggle button logic by triggering it click -->
                         <span class="sr-only">Toggle Dark Mode</span>
                         <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20"
@@ -169,8 +211,7 @@
                         Donde nacen tus ideas
                     </span>
                 </h1>
-                <p class="animate-fade-in-up mt-6 text-2xl text-textdark font-bold dark:text-gunsmoke max-w-2xl mx-auto mb-12"
-                    style="text-shadow: 0 0 6px rgb(0, 0, 0); animation-delay: 0.2s;">
+                <p class="animate-fade-in-up mt-6 text-textdark font-bold max-w-2xl mx-auto mb-12">
                     Hacemos que tu negocio crezca: una página web profesional que responde por vos, organiza tu trabajo
                     y atrae clientes incluso cuando no estás conectado.
                 </p>
@@ -189,68 +230,57 @@
         <section id="nosotros" class="py-32 bg-raffia dark:bg-cloud-burst scroll-mt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="glass-card glass-card-alt rounded-3xl p-8 md:p-16 relative overflow-hidden group animate-fade-in-up">
-                    <div class="grid md:grid-cols-1 gap-12 items-center">
+                    <div class="grid gap-12 items-center">
                         <div>
-                            <h3 class="text-3xl md:text-4xl text-center font-bold text-textlight dark:text-textdark mb-8">Quiénes
+                            <h3 class="text-3xl md:text-4xl text-center font-bold text-textlight dark:text-textdark mb-12">Quiénes
                                 Somos
                             </h3>
-                                <div class="flex flex-col md:flex-row items-start justify-center gap-20">
-                                    <div class="bg-slate-100 glass-card rounded-3xl p-8 md:p-12 animate-fade-in-up dark:bg-slate-800 rounded-3xl p-12 shadow-lg border border-slate-200 dark:border-slate-700
-                                    text-center max-w-lg ">                                       
-                                        <img src="/assets/img/Loana.png"
+                                <div class="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-16">
+                                    <!-- Profile Card: Loana -->
+                                    <div class="glass-card animate-fade-in-up text-center max-w-sm bg-alabaster/60 dark:bg-rhino/70 rounded-3xl p-8 shadow-xl border border-nomad/30">
+                                        <img src="assets/img/Loana.png"
                                             alt="Foto Loana"
                                             class="w-32 h-32 rounded-full object-cover shadow-lg mx-auto mb-4"
                                             loading="lazy" />
                                         <h4 class="text-xl font-semibold text-textlight dark:text-textdark mb-2">
                                             Loana Vera
                                         </h4>
-                                        <p class="text-base text-textlight/80 dark:text-textdark/80 leading-relaxed">
+                                        <p class="text-base text-river-bed dark:text-raffia leading-relaxed">
                                             Me enfoco en el desarrollo de soluciones digitales a medida, combinando funcionalidad, diseño y experiencia de
-                                            usuario.
-                                            Mi trabajo prioriza interfaces claras, estéticas y eficientes, pensadas para que cada proyecto sea intuitivo y
-                                            profesional.
+                                            usuario para crear interfaces intuitivas y profesionales.
                                         </p>
                                     </div>
-                                    <div class="bg-slate-100 glass-card rounded-3xl p-8 md:p-12 animate-fade-in-up dark:bg-slate-800 rounded-3xl p-12 shadow-lg border border-slate-200 dark:border-slate-700
-                                    text-center max-w-lg">                                       
-                                        <img src="/assets/img/Marcos.png"
+                                    <!-- Profile Card: Marcos -->
+                                    <div class="glass-card animate-fade-in-up text-center max-w-sm bg-alabaster/60 dark:bg-rhino/70 rounded-3xl p-8 shadow-xl border border-nomad/30" style="animation-delay: 0.1s;">
+                                        <img src="assets/img/Marcos.png"
                                             alt="Foto Marcos"
                                             class="w-32 h-32 rounded-full object-cover shadow-lg mx-auto mb-4"
                                             loading="lazy" />
                                         <h4 class="text-xl font-semibold text-textlight dark:text-textdark mb-2">
                                             Marcos Lescano
                                         </h4>
-                                        <p class="text-base text-textlight/80 dark:text-textdark/80 leading-relaxed">
-                                            Soy desarrollador web con sólida formación en Tecnologías de la Información.
-                                            Me especializo en la construcción de soluciones robustas, escalables y optimizadas, cuidando tanto la arquitectura
-                                            como el rendimiento de cada proyecto.
+                                        <p class="text-base text-river-bed dark:text-raffia leading-relaxed">
+                                            Soy desarrollador web con sólida formación en IT. Me especializo en la construcción de soluciones robustas,
+                                            escalables y optimizadas, cuidando la arquitectura y el rendimiento.
                                         </p>
                                     </div>
                                 </div>
-                            <p class="text-lg mt-10 text-textlight dark:text-textdark leading-relaxed">
-                                Somos Loana y Marcos, un equipo de desarrollo de San Justo, Santa Fe.
+
+                            <p class="text-lg mt-16 text-center max-w-4xl mx-auto text-textlight dark:text-textdark leading-relaxed">
+                                Somos Loana y Marcos (L&M Studio), un equipo de desarrollo de San Justo, Santa Fe, dedicado a crear soluciones digitales que combinan diseño y tecnología. Nuestra misión es ayudar a nuestros clientes a crecer con proyectos profesionales, funcionales y de alto rendimiento.
                             </p>
-                            <p class="text-lg  text-textlight dark:text-textdark leading-relaxed">
-                                Nos dedicamos a crear sitios web y soluciones digitales pensadas para que cada proyecto se vea profesional, funcione
-                                correctamente y ayude a nuestros clientes a crecer.
-                            </p>
-                            <p class="text-lg text-textlight dark:text-textdark leading-relaxed">
-                                Trabajamos bajo la identidad MYL Studio, combinando diseño, tecnología y precisión para brindar resultados excepcionales.
-                            </p>
-                            <h3 class="text-3xl md:text-4xl text-center font-bold text-textlight dark:text-textdark mt-5 mb-5">Cómo Trabajamos
+
+                            <h3 class="text-3xl md:text-4xl text-center font-bold text-textlight dark:text-textdark mt-16 mb-6">Cómo Trabajamos
                             </h3>
-                            <p class="text-lg text-textlight dark:text-textdark leading-relaxed">
-                                Aunque desarrollamos desde nuestra ciudad, colaboramos con personas y empresas de cualquier lugar.
-                                Estamos acostumbrados a gestionar proyectos a distancia, mantener una comunicación clara y organizarnos de forma online, para que todo el proceso sea simple y transparente.
+                            <p class="text-lg text-textlight dark:text-textdark leading-relaxed max-w-4xl mx-auto text-center">
+                                Aunque desarrollamos desde nuestra ciudad, colaboramos con personas y empresas de cualquier lugar. Gestionamos proyectos a distancia con una comunicación clara y organización online para que el proceso sea simple y transparente.
+                                Nos formamos constantemente para ofrecer trabajos modernos, rápidos y bien diseñados.
                             </p>
-                            <p class="text-lg text-textlight dark:text-textdark leading-relaxed">
-                                Nos seguimos formando constantemente para ofrecer trabajos modernos, rápidos y bien diseñados.
-                            </p>
-                            <h3 class="text-3xl md:text-4xl font-bold mt-10 text-textlight text-center dark:text-textdark mb-5 mt-5">Trabajo en Equipo
+
+                            <h3 class="text-3xl md:text-4xl font-bold mt-16 text-textlight text-center dark:text-textdark mb-6">Trabajo en Equipo
                             </h3>
-                            <p class="text-lg text-textlight dark:text-textdark leading-relaxed">
-                                Como equipo, trabajamos de manera colaborativa en cada proyecto, sin divisiones de roles fijas.
-                                Compartimos decisiones técnicas y creativas para garantizar un desarrollo completo, coherente y de alta calidad, desde el inicio hasta la entrega final.
+                            <p class="text-lg text-textlight dark:text-textdark leading-relaxed max-w-4xl mx-auto text-center">
+                                Como equipo, trabajamos de manera colaborativa en cada proyecto, sin divisiones de roles fijas. Compartimos decisiones técnicas y creativas para garantizar un desarrollo completo, coherente y de alta calidad, desde el inicio hasta la entrega final.
                             </p>
                         </div>
                     </div>
@@ -285,7 +315,7 @@
                         </div>
 
                         <p
-                            class="list-disc text-xl text-center list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                            class="list-disc text-xl text-center list-inside text-textlight dark:text-raffia space-y-1">
                             Tu web se mostrará correctamente en cualquier dispositivo, incluidas las computadoras de
                             escritorio, tablets y teléfonos móviles.</p>
                     </div>
@@ -305,7 +335,7 @@
                             </h3>
                         </div>
                         <p
-                            class="list-disc text-xl text-center list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                            class="list-disc text-xl text-center list-inside text-textlight dark:text-raffia space-y-1">
                             Tu sitio web es la cara digital de tu negocio, por lo que una UI/UX buena y atractiva te
                             ayudará a dar la mejor impresión y obtener más clientes potenciales.</p>
                     </div>
@@ -324,7 +354,7 @@
                             </h3>
                         </div>
                         <p
-                            class="list-disc text-xl text-center list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                            class="list-disc text-xl text-center list-inside text-textlight dark:text-raffia space-y-1">
                             Realizaremos todas las modificaciones que quieras a tu web y la mantendremos funcionando sin
                             errores para atraer y retener más clientes potenciales.</p>
                     </div>
@@ -352,7 +382,7 @@
                                     Gastronomía y servicios de comida
                                 </h3>
                                 <ul
-                                    class="mx-8 text-xl mb-8 list-disc list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                                    class="mx-8 text-xl mb-8 list-disc list-inside text-river-bed dark:text-raffia space-y-1">
                                     <li>Menús digitales para comida rápida</li>
                                     <li>Páginas web para restaurantes</li>
                                     <li>Cafeterías y bares</li>
@@ -372,7 +402,7 @@
                                     Belleza y bienestar
                                 </h3>
                                 <ul
-                                    class="mx-8 text-xl mb-8 py-3 list-disc list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                                    class="mx-8 text-xl mb-8 py-3 list-disc list-inside text-river-bed dark:text-raffia space-y-1">
                                     <li>Peluquerías</li>
                                     <li>Centros de estética</li>
                                     <li>Barberías</li>
@@ -392,7 +422,7 @@
                                     Alojamiento y turismo
                                 </h3>
                                 <ul
-                                    class="mx-8 text-xl py-3 mb-8 list-disc list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                                    class="mx-8 text-xl py-3 mb-8 list-disc list-inside text-river-bed dark:text-raffia space-y-1">
                                     <li>Hoteles</li>
                                     <li>Complejos turísticos</li>
                                     <li>Cabañas</li>
@@ -412,7 +442,7 @@
                                 </h3>
 
                                 <ul
-                                    class="mx-8 text-xl py-3 mb-8 list-disc list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                                    class="mx-8 text-xl py-3 mb-8 list-disc list-inside text-river-bed dark:text-raffia space-y-1">
                                     <li>Consultorios médicos</li>
                                     <li>Clínicas privadas</li>
                                     <li>Laboratorios</li>
@@ -432,7 +462,7 @@
                                     Comercios y empresas
                                 </h3>
                                 <ul
-                                    class="mx-8 text-xl mb-8 list-disc py-3 list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                                    class="mx-8 text-xl mb-8 list-disc py-3 list-inside text-river-bed dark:text-raffia space-y-1">
                                     <li>Empresas de servicios</li>
                                     <li>Emprendimientos</li>
                                     <li>Catálogos digitales</li>
@@ -451,7 +481,7 @@
                                     Medios y comunicación
                                 </h3>
                                 <ul
-                                    class="mx-8 text-xl mb-8 list-disc py-3 list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                                    class="mx-8 text-xl mb-8 list-disc py-3 list-inside text-river-bed dark:text-raffia space-y-1">
                                     <li>Portales de noticias</li>
                                     <li>Revistas digitales</li>
                                     <li>Blogs profesionales</li>
@@ -469,7 +499,7 @@
                                     Personalizado
                                 </h3>
                                 <p
-                                    class="mx-8 text-xl mb-8 text-center list-inside text-river-bed dark:text-gunsmoke space-y-1">
+                                    class="mx-8 text-xl mb-8 text-center list-inside text-river-bed dark:text-raffia space-y-1">
                                     Para cualquier proyecto que no esté dentro de los rubros anteriores, también
                                     desarrollamos
                                     aplicaciones web personalizadas.
@@ -505,16 +535,16 @@
                     <div class="grid md:grid-cols-3 gap-8 animate-stagger max-w-4xl mx-auto">
                         <div class="glass-card-alt p-6 rounded-xl text-center">
                             <h3 class="text-xl font-bold text-cloud-burst dark:text-white mb-2">Lunes a Viernes</h3>
-                            <p class="text-lg text-river-bed dark:text-gunsmoke">08:00 AM - 09:00 PM</p>
+                            <p class="text-lg text-river-bed dark:text-raffia">08:00 AM - 09:00 PM</p>
                         </div>
                         <div class="glass-card-alt p-6 rounded-xl text-center">
                             <h3 class="text-xl font-bold text-cloud-burst dark:text-white mb-2">Sábados</h3>
-                            <p class="text-lg text-river-bed dark:text-gunsmoke">08:00 AM - 11:30 AM</p>
-                            <p class="text-lg text-river-bed dark:text-gunsmoke">04:00 PM - 09:00 PM</p>
+                            <p class="text-lg text-river-bed dark:text-raffia">08:00 AM - 11:30 AM</p>
+                            <p class="text-lg text-river-bed dark:text-raffia">04:00 PM - 09:00 PM</p>
                         </div>
                         <div class="glass-card-alt p-6 rounded-xl text-center">
                             <h3 class="text-xl font-bold text-cloud-burst dark:text-white mb-2">Domingos</h3>
-                            <p class="text-lg text-river-bed dark:text-gunsmoke">No trabajamos</p>
+                            <p class="text-lg text-river-bed dark:text-raffia">No trabajamos</p>
                         </div>
                     </div>
                 </div>
@@ -552,7 +582,7 @@
                         ¿Cómo es el proceso de trabajo?
                     </summary>
                     <div class="faq-content text-lg sm:text-xl">
-                        <ul class="list-disc list-inside text-textlight dark:text-gunsmoke">
+                        <ul class="list-disc list-inside text-textlight dark:text-raffia">
                             <li>Conversamos sobre tu idea</li>
                             <li>Nos das o creamos un boceto inicial para que veas cómo quedaría.</li>
                             <li>Desarrollamos el proyecto completo.</li>
@@ -584,7 +614,7 @@
                         <p>
                             Solo necesitamos:
                         </p>
-                        <ul class="list-disc list-inside text-river-bed dark:text-gunsmoke">
+                        <ul class="list-disc list-inside text-river-bed dark:text-raffia">
                             <li>Una descripción de tu negocio</li>
                             <li>Qué funciones querés en la web</li>
                             <li>Colores o estilos que te gusten</li>
@@ -674,7 +704,7 @@
 
 
     </main>
-        <footer class="bg-[#1b2533] text-white">
+        <footer class="bg-primary text-textdark">
         <div class="max-w-6xl mx-auto px-6 py-16 ">
             <div class="flex justify-center mb-12 ">
                 <img src="assets/img/MyL.png"
@@ -724,8 +754,8 @@
         </div>
     </footer>
             <div id="privacyModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 px-4">
-                <div class="bg-white dark:bg-slate-900 text-slate-800 dark:text-white max-w-3xl w-full rounded-2xl p-6 overflow-y-auto max-h-[90vh] relative">
-                    <button onclick="closeModal('privacy')" class="absolute top-4 right-4 text-xl text-slate-500 hover:text-red-500">
+                <div class="bg-alabaster dark:bg-rhino text-slate-800 dark:text-white max-w-3xl w-full rounded-2xl p-6 overflow-y-auto max-h-[90vh] relative">
+                    <button onclick="closeModal('privacy')" class="absolute top-4 right-4 text-xl text-slate-500 dark:text-raffia hover:text-red-500 dark:hover:text-red-500">
                         ✕
                     </button>
                     <h2 class="text-2xl font-bold mb-4">Política de Privacidad de L&M Studio</h2>
@@ -741,8 +771,8 @@
                 </div>
             </div>
             <div id="termsModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 px-4">
-                <div class="bg-white dark:bg-slate-900 text-slate-800 dark:text-white max-w-3xl w-full rounded-2xl p-6 overflow-y-auto max-h-[90vh] relative">
-                    <button onclick="closeModal('terms')" class="absolute top-4 right-4 text-xl text-slate-500 hover:text-red-500">
+                <div class="bg-alabaster dark:bg-rhino text-slate-800 dark:text-white max-w-3xl w-full rounded-2xl p-6 overflow-y-auto max-h-[90vh] relative">
+                    <button onclick="closeModal('terms')" class="absolute top-4 right-4 text-xl text-slate-500 dark:text-raffia hover:text-red-500 dark:hover:text-red-500">
                         ✕
                     </button>
                     <h2 class="text-2xl font-bold mb-4">Términos y Condiciones de Uso</h2>
