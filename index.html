@@ -712,8 +712,65 @@
             <p class="text-center text-sm text-white/60">
                 © 2025 LyM Desarrollo Web. Todos los derechos reservados.
             </p>
+            <p class="text-center text-sm text-white/60">
+                <button onclick="openModal('terms')" class="underline hover:text-white transition">
+                    Términos y Condiciones
+                </button>
+                ·
+                <button onclick="openModal('privacy')" class="underline hover:text-white transition">
+                    Política de Privacidad
+                </button>
+            </p>
         </div>
     </footer>
+            <div id="privacyModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 px-4">
+                <div class="bg-white dark:bg-slate-900 text-slate-800 dark:text-white max-w-3xl w-full rounded-2xl p-6 overflow-y-auto max-h-[90vh] relative">
+                    <button onclick="closeModal('privacy')" class="absolute top-4 right-4 text-xl text-slate-500 hover:text-red-500">
+                        ✕
+                    </button>
+                    <h2 class="text-2xl font-bold mb-4">Política de Privacidad de L&M Studio</h2>
+                    <p class="mb-4"><strong>Introducción y Responsable</strong><br>
+                    Somos Loana y Marcos (L&M Estudio), con domicilio en San Justo, Santa Fe. Nos comprometemos a proteger la privacidad de los usuarios y clientes que visitan nuestro sitio web. Esta política describe cómo recogemos, utilizamos y protegemos la información personal que usted nos proporciona.</p>
+                    <p class="mb-0"><strong>Finalidad del Tratamiento</strong><br>
+                    Gestión de Consultas: Usamos sus datos para responder sus preguntas, enviar cotizaciones y gestionar las solicitudes de proyecto.</p>
+                    <p class="mb-4">Mejora del Servicio: Los datos de navegación nos ayudan a optimizar la estructura y el contenido de nuestro sitio web.</p>
+                    <p class="mb-4"><strong>Sus Derechos</strong><br>
+                    Usted tiene el derecho de acceder, rectificar, cancelar u oponerse al tratamiento de sus datos. Para ejercer estos derechos, puede escribirnos a nuestro correo electrónico:<a href="mailto:lymdesarrolloweb@gmail.com" class="underline">lymdesarrolloweb@gmail.com</a></p>
+                    <p><strong>Enlaces a Terceros</strong><br>
+                    Nuestro sitio puede contener enlaces a sitios externos (como Instagram o WhatsApp). Nosotros no somos responsables de las políticas de privacidad de esos sitios web.</p>
+                </div>
+            </div>
+            <div id="termsModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 px-4">
+                <div class="bg-white dark:bg-slate-900 text-slate-800 dark:text-white max-w-3xl w-full rounded-2xl p-6 overflow-y-auto max-h-[90vh] relative">
+                    <button onclick="closeModal('terms')" class="absolute top-4 right-4 text-xl text-slate-500 hover:text-red-500">
+                        ✕
+                    </button>
+                    <h2 class="text-2xl font-bold mb-4">Términos y Condiciones de Uso</h2>
+                    <p class="mb-4"><strong>1. Objeto y Aceptación</strong><br>
+                    Estos Términos y Condiciones regulan el uso del sitio web de L&M Studio y la prestación de nuestros servicios de diseño y desarrollo web. Al navegar o contratar nuestros servicios, usted acepta estos términos.</p>
+                    <p class="mb-4"><strong>2. Uso del Sitio Web</strong><br>
+                    Usted se compromete a utilizar nuestro sitio web de forma lícita y no realizar actividades que dañen, inutilicen o sobrecarguen nuestra plataforma. Queda prohibida la copia, reproducción o distribución de cualquier contenido de este sitio sin nuestro permiso explícito.</p>
+                    <p class="mb-4"><strong>3. Propiedad Intelectual</strong><br>
+                    L&M Studio: El contenido (textos, gráficos, logo, código) de este sitio web es propiedad exclusiva de L&M Studio y está protegido.</p>
+                    <p class="mb-4">Entrega al Cliente: Una vez finalizado y pagado el proyecto, la propiedad intelectual sobre el código y el diseño específico desarrollado se transfiere al cliente, salvo acuerdo explícito en contrario (detallado en el contrato de servicio).</p>
+                    <p class="mb-4"><strong>3. Limitación de Responsabilidad</strong><br>
+                    L&M Studio no garantiza la disponibilidad ininterrumpida del sitio web.</p>
+                    <p class="mb-4">No somos responsables por los daños derivados del uso indebido de los servicios por parte del cliente o por factores externos (caídas de hosting, ataques informáticos, etc.).</p>
+                    <p><strong>6. Ley Aplicable</strong><br>
+                    Estos Términos y Condiciones se rigen por las leyes de la República Argentina y la jurisdicción de la Provincia de Santa Fe.</p>
+                </div>
+            </div>
+            <script>
+                function openModal(type) {
+                    document.getElementById(type + 'Modal').classList.remove('hidden');
+                    document.getElementById(type + 'Modal').classList.add('flex');
+                }
+
+                function closeModal(type) {
+                    document.getElementById(type + 'Modal').classList.add('hidden');
+                    document.getElementById(type + 'Modal').classList.remove('flex');
+                }
+            </script>
 
 
     <script src="assets/js/theme.js"></script>
