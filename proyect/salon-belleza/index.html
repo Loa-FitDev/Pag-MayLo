@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sistema web para gestión de salones de belleza - Plataforma moderna de demostración"
+    />
+    <meta
+      name="keywords"
+      content="salón de belleza, gestión, belleza, estética, reservas, turnos"
+    />
+    <meta name="author" content="LyM | Desarrollo Web" />
+    <meta name="theme-color" content="#273f56" />
+
+    <title>Sistema de Gestión para Salón de Belleza | LyM Desarrollo Web</title>
+    <link
+      rel="shortcut icon"
+      href="../assets/img/MyL.png"
+      type="image/x-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      as="style"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Outfit", "sans-serif"],
+            },
+            colors: {
+              // New Palette
+              "cloud-burst": "#203553",
+              raffia: "#ecdbbd",
+              gunsmoke: "#898e8d",
+              alabaster: "#f9f9f9",
+              nomad: "#bfb9a9",
+              "river-bed": "#4d5d6b",
+              rhino: "#273f56",
+
+              // Semantic Mappings (Updated)
+              primary: "#273f56", // rhino
+              secondary: "#898e8d", // gunsmoke
+              dark: "#ecdbbd", // raffia
+              textlight: "#203553", // cloud-burst
+              textdark: "#ecdbbd", // raffia
+              textred: "#B22C2C", // Kept as is
+              bglight: "#ecdbbd", // raffia
+              bgdark: "#203553", // cloud-burst
+              bgopaco: "#bfb9a9", // nomad
+              borderblack: "#203553", // cloud-burst
+              borderlight: "#bfb9a9", // nomad
+            },
+          },
+        },
+      };
+    </script>
+
+    <script>
+      // Check for dark mode preference immediately
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+
+  <body class="font-sans antialiased m-0 p-0 overflow-hidden">
+    <main id="main-content" class="w-full h-screen flex flex-col">
+      <!-- Window Header -->
+      <div
+        class="bg-rhino dark:bg-cloud-burst px-6 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-3">
+          <div class="flex gap-2">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div>
+          <a
+            href="/"
+            class="text-[#ecdbbd] text-sm bg-white/20 hover:bg-white/30 px-3 py-1 rounded-lg transition-colors duration-200 flex items-center gap-2"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              ></path>
+            </svg>
+            Volver
+          </a>
+        </div>
+      </div>
+
+      <!-- Iframe Container -->
+      <div class="flex-1 relative">
+        <iframe
+          src="https://salon-management-platform-frontend.vercel.app/"
+          class="absolute inset-0 w-full h-full border-0"
+          title="Sistema de Gestión para Salón de Belleza"
+          loading="lazy"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
