@@ -576,6 +576,11 @@ details[open] .faq-summary::before {
   color: var(--white-color);
 }
 
+/* Hover effect for all zigzag containers */
+.zigzag__container .zigzag__item span:hover {
+  outline-offset: -5px;
+}
+
 /* Background Image Layer */
 #inicio::before {
   content: "";
