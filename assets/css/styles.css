@@ -602,8 +602,10 @@ details[open] .faq-summary::before {
 /* Mobile hero height adjustment */
 @media screen and (max-width: 768px) {
   #inicio {
-    height: 100vh;
-    max-height: 700px;
+    height: 620px !important;
+    min-height: 570px !important;
+    max-height: 620px !important;
+    padding-bottom: 3rem;
   }
 }
 
