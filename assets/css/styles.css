@@ -467,7 +467,7 @@ details[open] .faq-summary::before {
   margin-inline: auto;
 
   /* 👇 espacio extra abajo para 7 tarjetas */
-  padding-bottom: 8rem;
+  padding-bottom: 2rem;
   margin-top: 2rem;
 
   /* variables */
