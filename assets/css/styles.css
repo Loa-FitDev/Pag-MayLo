@@ -467,7 +467,7 @@ details[open] .faq-summary::before {
   margin-inline: auto;
 
   /* 👇 espacio extra abajo para 7 tarjetas */
-  padding-bottom: 25rem;
+  padding-bottom: 8rem;
   margin-top: 2rem;
 
   /* variables */
@@ -550,7 +550,7 @@ details[open] .faq-summary::before {
 
 @media (min-width: 600px) {
   .card-stack article > div {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1.5fr 2fr;
   }
 }
 
