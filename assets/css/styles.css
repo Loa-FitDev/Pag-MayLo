@@ -309,6 +309,19 @@ html {
   outline: var(--outline-w) solid #ecdbbd;
 }
 
+/* Cards de servicios - bordes para modo claro */
+.card-section .card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(32, 53, 83, 0.2) !important;
+  box-shadow: 0 4px 6px -1px rgba(32, 53, 83, 0.1);
+}
+
+.dark .card-section .card {
+  background: rgba(31, 41, 55, 0.8);
+  border: 2px solid rgba(236, 219, 189, 0.2) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
 .card-section .card:focus-within {
   --shadow-color: oklch(var(--pink));
   z-index: 5;
@@ -868,10 +881,22 @@ details[open] .faq-summary::before {
   color: #ecdbbd;
 }
 
+.glass-card {
+  background: rgba(32, 53, 83, 0.05); /* cloud-burst muy sutil */
+  border: 1px solid rgba(32, 53, 83, 0.2); /* Borde un poco más visible */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
 .dark .glass-card {
   background: rgba(236, 219, 189, 0.07); /* raffia muy sutil */
   border: 1px solid rgba(236, 219, 189, 0.2); /* Borde un poco más visible */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card:hover {
+  background: rgba(32, 53, 83, 0.1);
+  border-color: rgba(32, 53, 83, 0.4);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
 }
 
 .dark .glass-card:hover {
@@ -880,11 +905,49 @@ details[open] .faq-summary::before {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
 }
 
+.glass-card-alt {
+  background: rgba(255, 255, 255, 0.8); /* Más opaco en modo claro */
+  border: 2px solid rgba(32, 53, 83, 0.3); /* Borde más visible */
+  box-shadow: 0 4px 6px -1px rgba(32, 53, 83, 0.15);
+}
+
 .dark .glass-card-alt {
   background: rgba(255, 255, 255, 0.05); /* Subtle light tint in dark mode */
+  border: 1px solid rgba(236, 219, 189, 0.2); /* Borde raffia en dark mode */
 }
+.glass-card-alt:hover {
+  background: rgba(32, 53, 83, 0.15);
+  border-color: rgba(32, 53, 83, 0.5);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+}
+
 .dark .glass-card-alt:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+/* Fix específico para sección de horarios */
+#horarios .glass-card {
+  background: #ecdbbd !important; /* Contenedor principal sólido beige */
+  border: 2px solid rgba(32, 53, 83, 0.3) !important;
+  box-shadow: 0 4px 6px -1px rgba(32, 53, 83, 0.2) !important;
+}
+
+.dark #horarios .glass-card {
+  background: rgba(39, 63, 86, 0.9) !important;
+  border: 2px solid rgba(236, 219, 189, 0.3) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+#horarios .glass-card-alt {
+  background: rgba(236, 219, 189, 0.6) !important; /* Cards individuales más claras */
+  border: 2px solid rgba(32, 53, 83, 0.3) !important;
+  box-shadow: 0 4px 6px -1px rgba(32, 53, 83, 0.15) !important;
+}
+
+.dark #horarios .glass-card-alt {
+  background: rgba(39, 63, 86, 0.3) !important;
+  border: 2px solid rgba(236, 219, 189, 0.2) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Glass Navigation */
@@ -1005,9 +1068,10 @@ details[open] .faq-summary::before {
     font-size: 2.2em;
   }
 
-  /* Hide DESARROLLO WEB containers on mobile */
+  /* Show DESARROLLO WEB containers but adjust for mobile */
   .desarrollo-web-text {
-    display: none !important;
+    opacity: 0.7;
+    transform: scale(0.8);
   }
 }
 
@@ -1072,8 +1136,8 @@ details[open] .faq-summary::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--dark-black-color);
-  outline: 1px solid var(--border-color);
+  background-color: #203553;
+  outline: 1px solid #ecdbbd;
   transition: 0.3s linear;
 }
 .zigzag__container:nth-child(1) .zigzag__item span:hover {
@@ -1083,7 +1147,7 @@ details[open] .faq-summary::before {
   font-weight: normal;
   font-size: 2em;
   transform: rotate(45deg);
-  color: var(--white-color);
+  color: #ecdbbd;
 }
 
 /* Hover effect for all zigzag containers */
@@ -1172,6 +1236,20 @@ details[open] .faq-summary::before {
 .dark .glass-icon-btn:hover {
   background: rgba(32, 53, 83, 0.6);
   border-color: rgba(236, 219, 189, 0.3);
+}
+
+/* Bordes para secciones principales en modo claro */
+#nosotros, #proyectos, #horarios, #contacto {
+  border-top: 2px solid rgba(32, 53, 83, 0.2);
+  border-bottom: 2px solid rgba(32, 53, 83, 0.2);
+}
+
+.dark #nosotros, 
+.dark #proyectos, 
+.dark #horarios, 
+.dark #contacto {
+  border-top: 2px solid rgba(236, 219, 189, 0.3);
+  border-bottom: 2px solid rgba(236, 219, 189, 0.3);
 }
 
 /* Mobile Menu Styles */
