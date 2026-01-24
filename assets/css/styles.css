@@ -466,8 +466,8 @@ details[open] .faq-summary::before {
   width: min(100%, 40rem);
   margin-inline: auto;
 
-  /* 👇 espacio extra abajo */
-  padding-bottom: 12rem;
+  /* 👇 espacio extra abajo para 7 tarjetas */
+  padding-bottom: 25rem;
   margin-top: 2rem;
 
   /* variables */
@@ -498,6 +498,18 @@ details[open] .faq-summary::before {
 }
 .card-stack article:nth-of-type(3) {
   --bg: var(--bg-3);
+}
+.card-stack article:nth-of-type(4) {
+  --bg: #8b5cf6;
+}
+.card-stack article:nth-of-type(5) {
+  --bg: #06b6d4;
+}
+.card-stack article:nth-of-type(6) {
+  --bg: #10b981;
+}
+.card-stack article:nth-of-type(7) {
+  --bg: #f59e0b;
 }
 
 /* header */
@@ -571,9 +583,10 @@ details[open] .faq-summary::before {
   clip: rect(0, 0, 0, 0);
 }
 
-/* stack behavior */
+/* stack behavior - 7 cards */
+/* Card 1 active */
 .card-stack:has(#card-1:checked) article:nth-of-type(1) {
-  z-index: 3;
+  z-index: 7;
   transform: none;
   opacity: 1;
 }
@@ -585,9 +598,26 @@ details[open] .faq-summary::before {
   transform: translateY(-6rem) scale(0.8);
   opacity: 0.7;
 }
+.card-stack:has(#card-1:checked) article:nth-of-type(4) {
+  transform: translateY(-9rem) scale(0.7);
+  opacity: 0.55;
+}
+.card-stack:has(#card-1:checked) article:nth-of-type(5) {
+  transform: translateY(-12rem) scale(0.6);
+  opacity: 0.4;
+}
+.card-stack:has(#card-1:checked) article:nth-of-type(6) {
+  transform: translateY(-15rem) scale(0.5);
+  opacity: 0.25;
+}
+.card-stack:has(#card-1:checked) article:nth-of-type(7) {
+  transform: translateY(-18rem) scale(0.4);
+  opacity: 0.1;
+}
 
+/* Card 2 active */
 .card-stack:has(#card-2:checked) article:nth-of-type(2) {
-  z-index: 3;
+  z-index: 7;
   transform: none;
   opacity: 1;
 }
@@ -595,23 +625,180 @@ details[open] .faq-summary::before {
   transform: translateY(-3rem) scale(0.9);
   opacity: 0.85;
 }
-.card-stack:has(#card-2:checked) article:nth-of-type(1) {
+.card-stack:has(#card-2:checked) article:nth-of-type(4) {
   transform: translateY(-6rem) scale(0.8);
   opacity: 0.7;
 }
+.card-stack:has(#card-2:checked) article:nth-of-type(5) {
+  transform: translateY(-9rem) scale(0.7);
+  opacity: 0.55;
+}
+.card-stack:has(#card-2:checked) article:nth-of-type(6) {
+  transform: translateY(-12rem) scale(0.6);
+  opacity: 0.4;
+}
+.card-stack:has(#card-2:checked) article:nth-of-type(7) {
+  transform: translateY(-15rem) scale(0.5);
+  opacity: 0.25;
+}
+.card-stack:has(#card-2:checked) article:nth-of-type(1) {
+  transform: translateY(-18rem) scale(0.4);
+  opacity: 0.1;
+}
 
+/* Card 3 active */
 .card-stack:has(#card-3:checked) article:nth-of-type(3) {
-  z-index: 3;
+  z-index: 7;
   transform: none;
   opacity: 1;
 }
-.card-stack:has(#card-3:checked) article:nth-of-type(1) {
+.card-stack:has(#card-3:checked) article:nth-of-type(4) {
   transform: translateY(-3rem) scale(0.9);
   opacity: 0.85;
 }
-.card-stack:has(#card-3:checked) article:nth-of-type(2) {
+.card-stack:has(#card-3:checked) article:nth-of-type(5) {
   transform: translateY(-6rem) scale(0.8);
   opacity: 0.7;
+}
+.card-stack:has(#card-3:checked) article:nth-of-type(6) {
+  transform: translateY(-9rem) scale(0.7);
+  opacity: 0.55;
+}
+.card-stack:has(#card-3:checked) article:nth-of-type(7) {
+  transform: translateY(-12rem) scale(0.6);
+  opacity: 0.4;
+}
+.card-stack:has(#card-3:checked) article:nth-of-type(1) {
+  transform: translateY(-15rem) scale(0.5);
+  opacity: 0.25;
+}
+.card-stack:has(#card-3:checked) article:nth-of-type(2) {
+  transform: translateY(-18rem) scale(0.4);
+  opacity: 0.1;
+}
+
+/* Card 4 active */
+.card-stack:has(#card-4:checked) article:nth-of-type(4) {
+  z-index: 7;
+  transform: none;
+  opacity: 1;
+}
+.card-stack:has(#card-4:checked) article:nth-of-type(5) {
+  transform: translateY(-3rem) scale(0.9);
+  opacity: 0.85;
+}
+.card-stack:has(#card-4:checked) article:nth-of-type(6) {
+  transform: translateY(-6rem) scale(0.8);
+  opacity: 0.7;
+}
+.card-stack:has(#card-4:checked) article:nth-of-type(7) {
+  transform: translateY(-9rem) scale(0.7);
+  opacity: 0.55;
+}
+.card-stack:has(#card-4:checked) article:nth-of-type(1) {
+  transform: translateY(-12rem) scale(0.6);
+  opacity: 0.4;
+}
+.card-stack:has(#card-4:checked) article:nth-of-type(2) {
+  transform: translateY(-15rem) scale(0.5);
+  opacity: 0.25;
+}
+.card-stack:has(#card-4:checked) article:nth-of-type(3) {
+  transform: translateY(-18rem) scale(0.4);
+  opacity: 0.1;
+}
+
+/* Card 5 active */
+.card-stack:has(#card-5:checked) article:nth-of-type(5) {
+  z-index: 7;
+  transform: none;
+  opacity: 1;
+}
+.card-stack:has(#card-5:checked) article:nth-of-type(6) {
+  transform: translateY(-3rem) scale(0.9);
+  opacity: 0.85;
+}
+.card-stack:has(#card-5:checked) article:nth-of-type(7) {
+  transform: translateY(-6rem) scale(0.8);
+  opacity: 0.7;
+}
+.card-stack:has(#card-5:checked) article:nth-of-type(1) {
+  transform: translateY(-9rem) scale(0.7);
+  opacity: 0.55;
+}
+.card-stack:has(#card-5:checked) article:nth-of-type(2) {
+  transform: translateY(-12rem) scale(0.6);
+  opacity: 0.4;
+}
+.card-stack:has(#card-5:checked) article:nth-of-type(3) {
+  transform: translateY(-15rem) scale(0.5);
+  opacity: 0.25;
+}
+.card-stack:has(#card-5:checked) article:nth-of-type(4) {
+  transform: translateY(-18rem) scale(0.4);
+  opacity: 0.1;
+}
+
+/* Card 6 active */
+.card-stack:has(#card-6:checked) article:nth-of-type(6) {
+  z-index: 7;
+  transform: none;
+  opacity: 1;
+}
+.card-stack:has(#card-6:checked) article:nth-of-type(7) {
+  transform: translateY(-3rem) scale(0.9);
+  opacity: 0.85;
+}
+.card-stack:has(#card-6:checked) article:nth-of-type(1) {
+  transform: translateY(-6rem) scale(0.8);
+  opacity: 0.7;
+}
+.card-stack:has(#card-6:checked) article:nth-of-type(2) {
+  transform: translateY(-9rem) scale(0.7);
+  opacity: 0.55;
+}
+.card-stack:has(#card-6:checked) article:nth-of-type(3) {
+  transform: translateY(-12rem) scale(0.6);
+  opacity: 0.4;
+}
+.card-stack:has(#card-6:checked) article:nth-of-type(4) {
+  transform: translateY(-15rem) scale(0.5);
+  opacity: 0.25;
+}
+.card-stack:has(#card-6:checked) article:nth-of-type(5) {
+  transform: translateY(-18rem) scale(0.4);
+  opacity: 0.1;
+}
+
+/* Card 7 active */
+.card-stack:has(#card-7:checked) article:nth-of-type(7) {
+  z-index: 7;
+  transform: none;
+  opacity: 1;
+}
+.card-stack:has(#card-7:checked) article:nth-of-type(1) {
+  transform: translateY(-3rem) scale(0.9);
+  opacity: 0.85;
+}
+.card-stack:has(#card-7:checked) article:nth-of-type(2) {
+  transform: translateY(-6rem) scale(0.8);
+  opacity: 0.7;
+}
+.card-stack:has(#card-7:checked) article:nth-of-type(3) {
+  transform: translateY(-9rem) scale(0.7);
+  opacity: 0.55;
+}
+.card-stack:has(#card-7:checked) article:nth-of-type(4) {
+  transform: translateY(-12rem) scale(0.6);
+  opacity: 0.4;
+}
+.card-stack:has(#card-7:checked) article:nth-of-type(5) {
+  transform: translateY(-15rem) scale(0.5);
+  opacity: 0.25;
+}
+.card-stack:has(#card-7:checked) article:nth-of-type(6) {
+  transform: translateY(-18rem) scale(0.4);
+  opacity: 0.1;
 }
 
 /* Glass Buttons */
