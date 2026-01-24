@@ -823,6 +823,99 @@ details[open] .faq-summary::before {
 .dark .faq-content ul li {
   color: #ecdbbd;
 }
+.theme-switch {
+  --hue: 223;
+  --dur: 0.35s;
+  --ease: cubic-bezier(0.65, 0, 0.35, 1);
+
+  all: unset;
+  cursor: pointer;
+}
+
+/* TRACK */
+.theme-switch__track {
+  width: 3em;
+  height: 1.5em;
+  background-color: hsl(var(--hue), 10%, 85%);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  padding: 0.125em;
+  transition: background-color var(--dur) var(--ease);
+}
+
+/* THUMB */
+.theme-switch__thumb {
+  width: 1.25em;
+  height: 1.25em;
+  background-color: hsl(var(--hue), 10%, 10%);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: visible; /* 🔑 permite ver todos los rayos */
+  transform: translateX(0);
+  transition:
+    transform var(--dur) var(--ease),
+    background-color var(--dur) var(--ease);
+}
+
+/* ICONOS */
+.theme-icon {
+  position: absolute;
+  width: 1.05em;
+  height: 1.05em;
+  z-index: 2;
+  transition:
+    opacity var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+/* LUNA */
+.theme-icon--moon {
+  opacity: 1;
+  transform: scale(1);
+  color: hsl(var(--hue), 10%, 90%);
+}
+
+/* SOL */
+.theme-icon--sun {
+  opacity: 0;
+  transform: scale(0.5);
+  color: hsl(var(--hue), 10%, 10%);
+}
+
+/* ========================= */
+/*        DARK MODE          */
+/* ========================= */
+
+.dark .theme-switch__track {
+  background-color: hsl(var(--hue), 10%, 20%);
+}
+
+.dark .theme-switch__thumb {
+  transform: translateX(1.5em);
+  background-color: hsl(var(--hue), 10%, 90%);
+}
+
+.dark .theme-icon--sun {
+  opacity: 1;
+  transform: scale(1);
+  color: #203553;
+}
+
+.dark .theme-icon--moon {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+/* ========================= */
+/*  ANULA `hidden` DEL JS   */
+/* ========================= */
+
+.theme-switch .hidden {
+  display: block !important;
+}
 
 /* Glass Buttons */
 .glass-btn {
@@ -939,7 +1032,12 @@ details[open] .faq-summary::before {
 }
 
 #horarios .glass-card-alt {
-  background: rgba(236, 219, 189, 0.6) !important; /* Cards individuales más claras */
+  background: rgba(
+    236,
+    219,
+    189,
+    0.6
+  ) !important; /* Cards individuales más claras */
   border: 2px solid rgba(32, 53, 83, 0.3) !important;
   box-shadow: 0 4px 6px -1px rgba(32, 53, 83, 0.15) !important;
 }
@@ -1068,10 +1166,9 @@ details[open] .faq-summary::before {
     font-size: 2.2em;
   }
 
-  /* Show DESARROLLO WEB containers but adjust for mobile */
+  /* Hide DESARROLLO WEB containers in mobile */
   .desarrollo-web-text {
-    opacity: 0.7;
-    transform: scale(0.8);
+    display: none;
   }
 }
 
@@ -1239,14 +1336,17 @@ details[open] .faq-summary::before {
 }
 
 /* Bordes para secciones principales en modo claro */
-#nosotros, #proyectos, #horarios, #contacto {
+#nosotros,
+#proyectos,
+#horarios,
+#contacto {
   border-top: 2px solid rgba(32, 53, 83, 0.2);
   border-bottom: 2px solid rgba(32, 53, 83, 0.2);
 }
 
-.dark #nosotros, 
-.dark #proyectos, 
-.dark #horarios, 
+.dark #nosotros,
+.dark #proyectos,
+.dark #horarios,
 .dark #contacto {
   border-top: 2px solid rgba(236, 219, 189, 0.3);
   border-bottom: 2px solid rgba(236, 219, 189, 0.3);
