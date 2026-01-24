@@ -4,7 +4,10 @@
 
 /* Global Styles */
 * {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 html {
@@ -215,7 +218,7 @@ html {
   --mint: 84.12% 0.1334 165.28;
 
   --mobile--w: 360px;
-  --mobile--h: 540px;
+  --mobile--h: 400px;
 
   --outline-w: 9px;
   --preview-bg: #fff;
@@ -265,7 +268,7 @@ html {
   outline-offset: var(--outline-w);
 
   min-height: var(--mobile--h);
-  height: 100%;
+  height: 80%;
 
   min-width: var(--mobile--w);
   width: 100%;
@@ -281,7 +284,7 @@ html {
 .card-section .card:focus-within,
 .card-section .card:hover {
   --shadow-blur: 200px;
-  --shadow-color: oklch(var(--gold));
+  --shadow-color: oklch(var(--mint));
   --border-color: var(--shadow-color);
 
   background-color: white;
@@ -889,12 +892,7 @@ details[open] .faq-summary::before {
 }
 
 .glass-nav.menu-open {
-  background: rgba(
-    236,
-    219,
-    189,
-    0.95
-  ) !important;
+  background: rgba(236, 219, 189, 0.95) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 }
@@ -905,12 +903,7 @@ details[open] .faq-summary::before {
 }
 
 .dark .glass-nav.menu-open {
-  background: rgba(
-    32,
-    53,
-    83,
-    0.95
-  ) !important;
+  background: rgba(32, 53, 83, 0.95) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 }
@@ -960,15 +953,12 @@ details[open] .faq-summary::before {
   overflow: hidden;
 }
 
-
 /*========== Responsive typography ==========*/
 @media screen and (min-width: 968px) {
   :root {
     --normal-font-size: 1rem;
   }
 }
-
-
 
 /*==================== ZigZag Border Animation ====================*/
 .zigzag__container {
@@ -1133,8 +1123,6 @@ details[open] .faq-summary::before {
   background: rgba(15, 23, 42, 0.6);
 }
 
-
-
 /* Navbar Link Acrylic Style */
 .glass-nav-link {
   padding: 0.5rem 1.25rem;
@@ -1178,7 +1166,6 @@ details[open] .faq-summary::before {
   background: rgba(32, 53, 83, 0.6);
   border-color: rgba(236, 219, 189, 0.3);
 }
-
 
 /* Mobile Menu Styles */
 .mobile-menu {
