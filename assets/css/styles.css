@@ -488,31 +488,36 @@ details[open] .faq-summary::before {
 /* Responsive zigzag */
 @media screen and (max-width: 768px) {
   .zigzag__container {
-    gap: 25px;
+    gap: 30px;
   }
 
   .zigzag__item {
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
   }
 
   .zigzag__item span b {
-    font-size: 1.8em;
+    font-size: 2.2em;
+  }
+
+  /* Hide DESARROLLO WEB containers on mobile */
+  .desarrollo-web-text {
+    display: none !important;
   }
 }
 
 @media screen and (max-width: 480px) {
   .zigzag__container {
-    gap: 20px;
+    gap: 25px;
   }
 
   .zigzag__item {
-    height: 60px;
-    width: 60px;
+    height: 90px;
+    width: 90px;
   }
 
   .zigzag__item span b {
-    font-size: 1.5em;
+    font-size: 2.5em;
   }
 }
 .zigzag__item::before {
@@ -592,6 +597,14 @@ details[open] .faq-summary::before {
   background-repeat: no-repeat;
   background-attachment: scroll;
   z-index: -2;
+}
+
+/* Mobile hero height adjustment */
+@media screen and (max-width: 768px) {
+  #inicio {
+    height: 100vh;
+    max-height: 700px;
+  }
 }
 
 /* Acrylic Effect Overlay */
