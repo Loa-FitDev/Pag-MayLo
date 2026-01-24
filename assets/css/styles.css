@@ -1058,6 +1058,82 @@ details[open] .faq-summary::before {
     backdrop-filter 0.3s ease;
   border-bottom: 2px solid #ecdbbd;
 }
+.services-section .card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+/* CAPA VIOLETA */
+.services-section .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #4f46e5;
+  z-index: 0;
+  transition: clip-path 0.7s ease-in-out;
+  border-radius: inherit;
+}
+
+/* MODO OSCURO - círculo beige */
+.dark .services-section .card::before {
+  background-color: #ecdbbd;
+}
+
+/* ESTADO INICIAL – círculo MÁS CHICO */
+.services-section .card:nth-child(1)::before {
+  clip-path: circle(50px at 100% 100%);
+}
+
+.services-section .card:nth-child(2)::before {
+  clip-path: circle(50px at 0% 100%);
+}
+
+.services-section .card:nth-child(3)::before {
+  clip-path: circle(50px at 100% 0%);
+}
+
+.services-section .card:nth-child(4)::before {
+  clip-path: circle(50px at 0% 0%);
+}
+
+/* HOVER – cubre toda la card */
+.services-section .card:hover::before {
+  clip-path: circle(150% at 50% 50%);
+}
+
+/* CONTENIDO ARRIBA */
+.services-section .card > *,
+.services-section .card h2,
+.services-section .card h4,
+.services-section .card p,
+.services-section .card img {
+  position: relative;
+  z-index: 2;
+}
+
+/* TEXTO */
+.services-section .card p {
+  transition: color 0.5s ease;
+}
+
+.services-section .card:hover p {
+  color: #fff;
+}
+
+/* MODO OSCURO - texto beige */
+.dark .services-section .card p,
+.dark .services-section .card h2,
+.dark .services-section .card h4 {
+  color: #ecdbbd;
+}
+
+/* MODO OSCURO - hover texto azul oscuro */
+.dark .services-section .card:hover p,
+.dark .services-section .card:hover h2,
+.dark .services-section .card:hover h4 {
+  color: #203553;
+}
 
 .glass-nav.menu-open {
   background: rgba(236, 219, 189, 0.95) !important;
