@@ -111,4 +111,63 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   });
+  <script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const radios = Array.from(
+			document.querySelectorAll(".card-stack input[type='radio']")
+		);
+
+		let currentIndex = radios.findIndex(r => r.checked);
+		let intervalId = null;
+		let isPaused = false;
+
+		function showNextCard() {
+			if (isPaused) return;
+			currentIndex = (currentIndex + 1) % radios.length;
+			radios[currentIndex].checked = true;
+		}
+
+		function startAutoSlide() {
+			if (intervalId) return;
+			intervalId = setInterval(showNextCard, 4000);
+		}
+
+		function stopAutoSlide() {
+			clearInterval(intervalId);
+			intervalId = null;
+		}
+
+		/* pausa mientras se presiona */
+		const cardStack = document.querySelector(".card-stack");
+
+		cardStack.addEventListener("mousedown", () => {
+			isPaused = true;
+			stopAutoSlide();
+		});
+
+		cardStack.addEventListener("mouseup", () => {
+			isPaused = false;
+			startAutoSlide();
+		});
+
+		cardStack.addEventListener("mouseleave", () => {
+			isPaused = false;
+			startAutoSlide();
+		});
+
+		/* soporte táctil */
+		cardStack.addEventListener("touchstart", () => {
+			isPaused = true;
+			stopAutoSlide();
+		});
+
+		cardStack.addEventListener("touchend", () => {
+			isPaused = false;
+			startAutoSlide();
+		});
+
+		startAutoSlide();
+	});
+</script>
+
 });

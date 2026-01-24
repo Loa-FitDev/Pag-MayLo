@@ -324,6 +324,295 @@ details[open] .faq-summary::before {
   border: 2px solid #203553; /* Cloud Burst (Stringer/Darker Blue) border */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
+@import url("https://fonts.bunny.net/css?family=kodchasan:200,400,600");
+
+.card-stack {
+  --offset: 6rem;
+  --scale-step: 0.85;
+  --opacity-step: 0.7;
+
+  display: grid;
+  grid-template-areas: "stack";
+  width: min(100%, 40rem);
+  margin-inline: auto;
+}
+
+.card-stack article {
+  grid-area: stack;
+  background: white;
+  border-radius: 10px;
+  position: relative;
+  transition: 400ms ease;
+  font-family: "Kodchasan", sans-serif;
+}
+
+/* colors per card */
+.card-stack article:nth-of-type(1) {
+  --bg: #a3e635;
+}
+.card-stack article:nth-of-type(2) {
+  --bg: #fbbf24;
+}
+.card-stack article:nth-of-type(3) {
+  --bg: #f9a8d4;
+}
+
+/* header */
+.card-stack article header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--bg);
+  border-radius: 10px 10px 0 0;
+}
+
+.card-stack article header label {
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.card-stack article header label:hover {
+  transform: rotate(90deg);
+}
+
+/* content */
+.card-stack article > div {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .card-stack article > div {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.card-stack img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.card-stack .poem {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.card-stack p {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+}
+
+/* accessibility */
+.card-stack .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* stacking logic */
+.card-stack:has(#card-1:checked) article:nth-of-type(1) {
+  z-index: 3;
+  transform: none;
+  opacity: 1;
+}
+.card-stack:has(#card-1:checked) article:nth-of-type(2) {
+  transform: translateY(-3rem) scale(0.9);
+  opacity: 0.8;
+}
+.card-stack:has(#card-1:checked) article:nth-of-type(3) {
+  transform: translateY(-6rem) scale(0.8);
+  opacity: 0.6;
+}
+
+.card-stack:has(#card-2:checked) article:nth-of-type(2) {
+  z-index: 3;
+  transform: none;
+  opacity: 1;
+}
+.card-stack:has(#card-2:checked) article:nth-of-type(3) {
+  transform: translateY(-3rem) scale(0.9);
+  opacity: 0.8;
+}
+.card-stack:has(#card-2:checked) article:nth-of-type(1) {
+  transform: translateY(-6rem) scale(0.8);
+  opacity: 0.6;
+}
+
+.card-stack:has(#card-3:checked) article:nth-of-type(3) {
+  z-index: 3;
+  transform: none;
+  opacity: 1;
+}
+.card-stack:has(#card-3:checked) article:nth-of-type(1) {
+  transform: translateY(-3rem) scale(0.9);
+  opacity: 0.8;
+}
+.card-stack:has(#card-3:checked) article:nth-of-type(2) {
+  transform: translateY(-6rem) scale(0.8);
+  opacity: 0.6;
+}
+@import url("https://fonts.bunny.net/css?family=kodchasan:200,400,600");
+
+.card-stack {
+  display: grid;
+  grid-template-areas: "stack";
+  width: min(100%, 40rem);
+  margin-inline: auto;
+
+  /* 👇 espacio extra abajo */
+  padding-bottom: 12rem;
+  margin-top: 2rem;
+
+  /* variables */
+  --bg-1: #a3e635;
+  --bg-2: #fbbf24;
+  --bg-3: #f9a8d4;
+}
+
+/* articles */
+.card-stack article {
+  grid-area: stack;
+  background: white;
+  border-radius: 10px;
+  position: relative;
+  transition: 400ms ease;
+  font-family: "Kodchasan", sans-serif;
+
+  /* 👇 texto legible SIEMPRE */
+  color: #111;
+}
+
+/* colores */
+.card-stack article:nth-of-type(1) {
+  --bg: var(--bg-1);
+}
+.card-stack article:nth-of-type(2) {
+  --bg: var(--bg-2);
+}
+.card-stack article:nth-of-type(3) {
+  --bg: var(--bg-3);
+}
+
+/* header */
+.card-stack article header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  border-radius: 10px 10px 0 0;
+}
+
+.card-stack article header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #111;
+}
+
+.card-stack article header label {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #111;
+  transition: transform 0.3s ease;
+}
+
+.card-stack article header label:hover {
+  transform: rotate(90deg);
+}
+
+/* content */
+.card-stack article > div {
+  padding: 1.75rem;
+  display: grid;
+  gap: 1.5rem;
+  color: #111;
+}
+
+@media (min-width: 600px) {
+  .card-stack article > div {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.card-stack img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* text */
+.card-stack .poem {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.card-stack p {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #111;
+}
+
+/* accessibility */
+.card-stack .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* stack behavior */
+.card-stack:has(#card-1:checked) article:nth-of-type(1) {
+  z-index: 3;
+  transform: none;
+  opacity: 1;
+}
+.card-stack:has(#card-1:checked) article:nth-of-type(2) {
+  transform: translateY(-3rem) scale(0.9);
+  opacity: 0.85;
+}
+.card-stack:has(#card-1:checked) article:nth-of-type(3) {
+  transform: translateY(-6rem) scale(0.8);
+  opacity: 0.7;
+}
+
+.card-stack:has(#card-2:checked) article:nth-of-type(2) {
+  z-index: 3;
+  transform: none;
+  opacity: 1;
+}
+.card-stack:has(#card-2:checked) article:nth-of-type(3) {
+  transform: translateY(-3rem) scale(0.9);
+  opacity: 0.85;
+}
+.card-stack:has(#card-2:checked) article:nth-of-type(1) {
+  transform: translateY(-6rem) scale(0.8);
+  opacity: 0.7;
+}
+
+.card-stack:has(#card-3:checked) article:nth-of-type(3) {
+  z-index: 3;
+  transform: none;
+  opacity: 1;
+}
+.card-stack:has(#card-3:checked) article:nth-of-type(1) {
+  transform: translateY(-3rem) scale(0.9);
+  opacity: 0.85;
+}
+.card-stack:has(#card-3:checked) article:nth-of-type(2) {
+  transform: translateY(-6rem) scale(0.8);
+  opacity: 0.7;
+}
 
 /* Glass Buttons */
 .glass-btn {
