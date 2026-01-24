@@ -481,9 +481,158 @@ details[open] .faq-summary::before {
   .card-stack {
     width: min(90%, 28rem);
   }
-  
+
   .card-stack img {
     height: 140px;
+  }
+}
+.card-section {
+  --bg: 25% 0.0075 70;
+  --pink: 77.75% 0.1003 350.51;
+  --gold: 84.16% 0.1169 71.19;
+  --mint: 84.12% 0.1334 165.28;
+
+  --mobile--w: 360px;
+  --mobile--h: 540px;
+
+  --outline-w: 9px;
+  --preview-bg: #fff;
+
+  isolation: isolate;
+}
+
+.card-section .card__container {
+  display: flex;
+  flex-wrap: wrap;
+  place-items: center;
+  place-content: center;
+
+  &:has(:hover, :focus-within) {
+    .card:not(:hover, :focus-within) {
+      opacity: 0.4;
+    }
+  }
+}
+
+.card-section .card {
+  --bg-pos-y--start: 0;
+  --bg-pos-y--end: 0;
+  --bg-pos-y: var(--bg-pos-y--start);
+  --delay: 0;
+  --duration: 6s;
+
+  --shadow-blur: 24px;
+  --shadow-color: oklch(var(--bg));
+
+  border: var(--outline-w) solid var(--border-color, transparent);
+  border-radius: 6px;
+  box-shadow: 0 0 var(--shadow-blur) 0 var(--shadow-color);
+
+  transition-property:
+    border, box-shadow, filter, outline-offset, opacity, rotate, scale, z-index;
+  transition-duration: 0.15s, 0.15s, 0.6s, 0.6s, 0.3s, 0.3s, 0.3s, 0.15s;
+
+  filter: grayscale(100%) sepia(5%);
+  mix-blend-mode: multiply;
+  opacity: 0.69;
+
+  scale: 0.85;
+  rotate: var(--rotation, -4deg);
+
+  outline: var(--outline-w) solid var(--preview-bg);
+  outline-offset: var(--outline-w);
+
+  min-height: var(--mobile--h);
+  height: 100%;
+
+  min-width: var(--mobile--w);
+  width: 100%;
+
+  position: relative;
+
+  animation-name: bg-scroll;
+  animation-delay: var(--delay);
+  animation-duration: var(--duration);
+  animation-fill-mode: forwards;
+}
+
+.card-section .card:focus-within,
+.card-section .card:hover {
+  --shadow-blur: 200px;
+  --shadow-color: oklch(var(--gold));
+  --border-color: var(--shadow-color);
+
+  background-color: white;
+  mix-blend-mode: initial;
+  filter: none;
+  opacity: 1;
+
+  outline-offset: calc(var(--outline-w) / 2);
+
+  scale: 1;
+  rotate: 0deg;
+
+  transition-property:
+    border, box-shadow, filter, outline-offset, opacity, rotate, scale, z-index;
+  transition-duration: 0.15s, 0.15s, 0.3s, 0.3s, 0.3s, 0.3s, 0.3s, 0.15s;
+}
+
+.card-section .card:focus-within {
+  --shadow-color: oklch(var(--pink));
+  z-index: 5;
+}
+
+.card-section .card:hover {
+  z-index: 6;
+}
+
+.card-section .card:hover:focus {
+  --shadow-color: oklch(var(--mint));
+}
+
+.card-section .card.mobile {
+  max-height: var(--mobile--h);
+  max-width: var(--mobile--w);
+}
+
+.card-section .card:nth-of-type(2) {
+  --bg-pos-y--end: calc(var(--mobile--h) * -1.025);
+  --rotation: 3deg;
+}
+
+.card-section .card:nth-of-type(3) {
+  --bg-pos-y--end: calc(var(--mobile--h) * -2.25);
+  --duration: 6.5s;
+  --rotation: -1deg;
+}
+
+.card-section .card:nth-of-type(4) {
+  --bg-pos-y--end: calc(var(--mobile--h) * -3.75);
+  --duration: 6.75s;
+  --rotation: -5deg;
+}
+
+.card-section .card:nth-of-type(5) {
+  --bg-pos-y--end: calc(var(--mobile--h) * -4.82);
+  --duration: 7s;
+  --rotation: -2deg;
+}
+
+.card-section .card:nth-of-type(6) {
+  --bg-pos-y--end: calc(var(--mobile--h) * -5.85);
+  --duration: 7.25s;
+  --rotation: 2deg;
+}
+
+.card-section .card:nth-of-type(7) {
+  --bg-pos-y--end: calc(var(--mobile--h) * -7.21);
+  --duration: 7.5s;
+  --rotation: 4deg;
+}
+
+@keyframes bg-scroll {
+  to {
+    background-position-y: var(--bg-pos-y--end);
   }
 }
 
