@@ -283,7 +283,6 @@ html {
 
 .card-section .card:focus-within,
 .card-section .card:hover {
-  background-color: #ecdbbd;
   mix-blend-mode: initial;
   filter: none;
   opacity: 1;
@@ -296,6 +295,18 @@ html {
   transition-property:
     border, box-shadow, filter, outline-offset, opacity, rotate, scale, z-index;
   transition-duration: 0.15s, 0.15s, 0.3s, 0.3s, 0.3s, 0.3s, 0.3s, 0.15s;
+}
+
+/* Modo claro - fondo azul, letras beige */
+.card-section .card:hover {
+  background-color: #203553;
+  outline: var(--outline-w) solid #203553;
+}
+
+/* Modo oscuro - fondo beige, letras azul */
+.dark .card-section .card:hover {
+  background-color: #ecdbbd;
+  outline: var(--outline-w) solid #ecdbbd;
 }
 
 .card-section .card:focus-within {
