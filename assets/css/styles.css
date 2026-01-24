@@ -565,13 +565,49 @@ details[open] .faq-summary::before {
 .card-stack .poem {
   height: 100%;
   overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-stack p {
-  margin: 0 0 1rem;
+  margin: 0;
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #111;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mejorar UL/LI en todas las tarjetas */
+.card-stack ul {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-left: 1.5rem;
+}
+
+.card-stack li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #111;
+  text-align: left;
+  list-style-position: outside;
+}
+
+/* Tarjeta Personalizado con letras más grandes */
+.card-stack article:nth-of-type(7) p {
+  font-size: 1.3rem !important;
+  font-weight: 500;
+  line-height: 1.7;
 }
 
 /* accessibility */
