@@ -1227,6 +1227,15 @@ details[open] .faq-summary::before {
   transform: rotate(180deg);
   z-index: -1;
 }
+.zigzag__container:nth-child(4) {
+  transform: rotate(180deg);
+  z-index: -1;
+}
+
+.zigzag__container:nth-child(6) {
+  transform: rotate(180deg);
+  z-index: -1;
+}
 .zigzag__item {
   display: block;
   height: 100px;
