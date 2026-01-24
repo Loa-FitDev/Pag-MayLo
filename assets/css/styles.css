@@ -283,11 +283,7 @@ html {
 
 .card-section .card:focus-within,
 .card-section .card:hover {
-  --shadow-blur: 200px;
-  --shadow-color: oklch(var(--mint));
-  --border-color: var(--shadow-color);
-
-  background-color: white;
+  background-color: #ecdbbd;
   mix-blend-mode: initial;
   filter: none;
   opacity: 1;
