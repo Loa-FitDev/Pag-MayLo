@@ -1064,12 +1064,12 @@ details[open] .faq-summary::before {
   border-radius: 1.5rem;
 }
 
-/* CAPA VIOLETA */
+/* CAPA - Modo Claro */
 .services-section .card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: #4f46e5;
+  background-color: #203553;
   z-index: 0;
   transition: clip-path 0.7s ease-in-out;
   border-radius: inherit;
@@ -1112,13 +1112,27 @@ details[open] .faq-summary::before {
   z-index: 2;
 }
 
-/* TEXTO */
-.services-section .card p {
+/* TEXTO - MODO CLARO */
+.services-section .card p,
+.services-section .card h2,
+.services-section .card h4 {
+  color: #203553;
   transition: color 0.5s ease;
 }
 
-.services-section .card:hover p {
-  color: #fff;
+.services-section .card:hover p,
+.services-section .card:hover h2,
+.services-section .card:hover h4 {
+  color: #ecdbbd;
+}
+
+/* FONDO DE TARJETA - MODO CLARO */
+.services-section .card {
+  background-color: #ecdbbd;
+}
+
+.dark .services-section .card {
+  background-color: transparent;
 }
 
 /* MODO OSCURO - texto beige */
