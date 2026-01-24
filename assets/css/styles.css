@@ -398,7 +398,7 @@ details[open] .faq-summary::before {
 }
 
 .card-stack .poem {
-  max-height: 200px;
+  max-height: 300px;
   overflow-y: auto;
 }
 
@@ -563,7 +563,7 @@ details[open] .faq-summary::before {
 
 /* text */
 .card-stack .poem {
-  max-height: 200px;
+  height: 100%;
   overflow-y: auto;
 }
 
