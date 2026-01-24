@@ -476,6 +476,17 @@ details[open] .faq-summary::before {
   --bg-3: #f9a8d4;
 }
 
+/* Responsive móvil - hacer carrusel más chico */
+@media (max-width: 600px) {
+  .card-stack {
+    width: min(90%, 28rem);
+  }
+  
+  .card-stack img {
+    height: 200px;
+  }
+}
+
 /* articles */
 .card-stack article {
   grid-area: stack;
