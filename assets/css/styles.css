@@ -1610,6 +1610,9 @@ details[open] .faq-summary::before {
   background-repeat: no-repeat;
   background-attachment: scroll;
   z-index: -2;
+  /* Evitar bloquear renderizado */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* Mobile hero height adjustment */
