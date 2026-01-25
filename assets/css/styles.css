@@ -1245,6 +1245,243 @@ details[open] .faq-summary::before {
   transform: rotate(315deg);
 }
 
+/* iPad/tablet specific styles (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Hero section adjustments for iPad */
+  .hero-ipad-adjust {
+    margin-top: 2rem !important;
+  }
+  
+  /* Adjust zigzag containers for tablet */
+  .zigzag__container {
+    gap: 45px;
+    transform: scale(0.8);
+  }
+  
+  .zigzag__item {
+    height: 90px;
+    width: 90px;
+  }
+  
+  .zigzag__item span b {
+    font-size: 2em;
+  }
+  
+  /* Keep DESARROLLO WEB visible but smaller */
+  .desarrollo-web-text {
+    transform: scale(0.7);
+    margin-top: 3rem !important;
+  }
+  
+  /* Adjust hero content positioning */
+  .relative.z-10.mb-44 {
+    margin-bottom: 4rem !important;
+    margin-top: 2rem !important;
+    min-height: 90vh !important;
+  }
+  
+  /* Fix the ridiculous margins */
+  .mt-\[32rem\] {
+    margin-top: 8rem !important;
+  }
+  
+  .mt-\[36rem\] {
+    margin-top: 10rem !important;
+  }
+  
+  .mt-\[60rem\] {
+    margin-top: 12rem !important;
+  }
+  
+  /* Adjust hero text container */
+  .text-center.mt-\[32rem\] {
+    margin-top: 6rem !important;
+  }
+  
+  /* Navbar adjustments for iPad - use hamburger menu */
+  .glass-nav .hidden.md\:flex {
+    display: none !important;
+  }
+  
+  /* Show mobile menu button on iPad */
+  .md\:hidden.flex.items-center.gap-2.sm\:gap-4 {
+    display: flex !important;
+  }
+  
+  /* Adjust mobile menu for iPad */
+  .mobile-menu {
+    width: 300px !important;
+    right: 0 !important;
+    top: 80px !important;
+  }
+  
+  .mobile-menu-link {
+    padding: 1rem !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Logo adjustment for iPad */
+  .h-12.sm\:h-16 {
+    height: 3rem !important;
+  }
+  
+  /* Services cards - 2 columns instead of 3 on iPad */
+  .grid.md\:grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Service cards adjustments */
+  .card.mobile {
+    min-height: 320px !important;
+    max-height: 380px !important;
+  }
+  
+  .card.mobile p {
+    font-size: 1.125rem !important;
+  }
+  
+  /* Projects section adjustments - 1 column in iPad */
+  .grid.md\:grid-cols-2.gap-8 {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+  }
+  
+  .glass-card.rounded-2xl {
+    padding: 1.5rem !important;
+  }
+  
+  /* Images in projects */
+  .w-full.h-48.sm\:h-64.md\:h-72.lg\:h-64 {
+    height: 200px !important;
+  }
+  
+  /* Text adjustments */
+  .text-2xl.font-bold {
+    font-size: 1.5rem !important;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem !important;
+  }
+  
+  /* Card-stack adjustments for iPad */
+  .card-stack {
+    width: min(90%, 35rem) !important;
+    --offset: 4rem !important;
+  }
+  
+  .card-stack article {
+    max-width: 100% !important;
+  }
+  
+  .card-stack img {
+    height: 160px !important;
+  }
+  
+  .card-stack .poem {
+    max-height: 250px !important;
+  }
+  
+  .card-stack header h2 {
+    font-size: 1.25rem !important;
+  }
+  
+  .card-stack p,
+  .card-stack li {
+    font-size: 0.95rem !important;
+  }
+  
+  /* FAQ section adjustments */
+  .faq-details {
+    padding: 1rem !important;
+  }
+  
+  .faq-summary {
+    font-size: 1.125rem !important;
+    padding: 0.75rem !important;
+  }
+  
+  .faq-content {
+    font-size: 1rem !important;
+    padding: 0.75rem !important;
+  }
+  
+  /* Horarios section */
+  .grid.md\:grid-cols-3.gap-8 {
+    gap: 1.5rem !important;
+  }
+  
+  .glass-card-alt.p-6 {
+    padding: 1rem !important;
+  }
+  
+  /* Hero text adjustments for iPad */
+  .hero-text-ipad {
+    margin-top: 16rem !important;
+  }
+  
+  .hero-text-ipad p {
+    font-size: 1.125rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .hero-text-ipad .flex {
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Contact section adjustments */
+  .max-w-3xl.mx-auto {
+    padding: 0 1.5rem !important;
+  }
+  
+  .glass-card.glass-card-alt.rounded-3xl {
+    padding: 2rem !important;
+  }
+  
+  .text-2xl.sm\:text-3xl.md\:text-4xl {
+    font-size: 1.875rem !important;
+  }
+  
+  .text-lg.sm\:text-xl.md\:text-2xl {
+    font-size: 1.25rem !important;
+  }
+  
+  /* Button adjustments for iPad */
+  .flex.flex-col.sm\:flex-row {
+    flex-direction: row !important;
+    gap: 1rem !important;
+  }
+  
+  .glass-btn {
+    font-size: 1rem !important;
+    padding: 0.75rem 1.5rem !important;
+  }
+  
+  /* Scroll adjustments */
+  html {
+    scroll-padding-top: 80px !important;
+  }
+  
+  .scroll-mt-20 {
+    scroll-margin-top: 80px !important;
+  }
+  
+  /* Glass card adjustments */
+  .glass-card {
+    backdrop-filter: blur(8px) !important;
+  }
+  
+  /* Improve touch targets for iPad */
+  button,
+  a {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+}
+
 /* Responsive zigzag */
 @media screen and (max-width: 768px) {
   .zigzag__container {
