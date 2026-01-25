@@ -399,9 +399,29 @@ html {
   color: #ecdbbd;
 }
 
-.dark .card-stack article header h2,
-.dark .card-stack article header label {
-  color: #ecdbbd;
+/* MODO OSCURO - H2 DE CARDS EN AZUL OSCURO #203553 */
+.dark .card-stack article header h2.text-cloud-burst,
+.dark .card-stack article header h2[class*="text-cloud-burst"],
+.card-stack article header h2.text-cloud-burst,
+.card-stack article header h2[class*="text-cloud-burst"],
+html.dark .card-stack article header h2.text-cloud-burst,
+html.dark .card-stack article header h2[class*="text-cloud-burst"] {
+  color: #203553 !important;
+}
+
+/* SELECTOR NUCLEAR - DIRECTO AL ELEMENTO */
+article header h2.text-cloud-burst {
+  color: #203553 !important;
+}
+
+.dark article header h2.text-cloud-burst {
+  color: #203553 !important;
+}
+
+/* CRUZ/FLECHA EN AZUL OSCURO EN MODO OSCURO */
+.dark .card-stack article header label,
+.dark .card-stack article header label[for*="card-"] {
+  color: #203553 !important;
 }
 
 .dark .card-stack ul,
