@@ -394,6 +394,22 @@ html {
   color: #111;
 }
 
+.dark .card-stack article {
+  background: #203353;
+  color: #ecdbbd;
+}
+
+.dark .card-stack article header h2,
+.dark .card-stack article header label {
+  color: #ecdbbd;
+}
+
+.dark .card-stack ul,
+.dark .card-stack li,
+.dark .card-stack p {
+  color: #ecdbbd;
+}
+
 /* colores */
 .card-stack article:nth-of-type(1) {
   --bg: var(--bg-1);
@@ -1594,6 +1610,9 @@ details[open] .faq-summary::before {
   background-repeat: no-repeat;
   background-attachment: scroll;
   z-index: -2;
+  /* Evitar bloquear renderizado */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* Mobile hero height adjustment */
