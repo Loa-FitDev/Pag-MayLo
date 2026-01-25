@@ -191,9 +191,9 @@ html {
   width: min(100%, 40rem);
   margin-inline: auto;
 
-  /* 👇 espacio extra abajo para 7 tarjetas */
-  padding-bottom: 2rem;
-  margin-top: 2rem;
+  /* 👇 espacio reducido para mejor flujo visual */
+  padding-bottom: 1rem;
+  margin-top: 1rem;
 
   /* variables */
   --bg-1: #a3e635;
