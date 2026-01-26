@@ -231,7 +231,7 @@
               </span>
             </button>
 
-            <button id="mobile-menu-btn" class="text-textlight dark:text-alabaster hover:bg-nomad dark:hover:bg-rhino focus:outline-none focus:ring-4 focus:ring-nomad dark:focus:ring-river-bed rounded-lg p-2.5 transition-colors" onclick="console.log('CLICK DIRECTO!'); document.getElementById('mobile-menu').classList.toggle('hidden'); document.getElementById('mobile-menu').classList.toggle('open'); document.querySelector('header').classList.toggle('menu-open');">
+            <button id="mobile-menu-btn" class="md:hidden text-textlight dark:text-alabaster hover:bg-nomad dark:hover:bg-rhino focus:outline-none focus:ring-4 focus:ring-nomad dark:focus:ring-river-bed rounded-lg p-2.5 transition-colors">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
@@ -241,7 +241,7 @@
       </div>
 
       <!-- Mobile Menu -->
-      <nav id="mobile-menu" class="mobile-menu hidden fixed top-20 right-0 glass-nav z-40 w-64">
+      <nav id="mobile-menu" class="mobile-menu hidden md:hidden fixed top-20 right-0 glass-nav z-40 w-64">
         <div class="px-4 py-4 space-y-2">
           <a href="#inicio" class="mobile-menu-link block px-4 py-3 rounded-lg text-textlight dark:text-textdark font-medium hover:bg-nomad dark:hover:bg-rhino transition-colors">Inicio</a>
           <a href="#nosotros" class="mobile-menu-link block px-4 py-3 rounded-lg text-textlight dark:text-textdark font-medium hover:bg-nomad dark:hover:bg-rhino transition-colors">Nosotros</a>

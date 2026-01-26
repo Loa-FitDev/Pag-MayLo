@@ -109,6 +109,25 @@ document.addEventListener("DOMContentLoaded", function() {
   const mobileMenuLinks = document.querySelectorAll(".mobile-menu-link");
   const header = document.querySelector("header");
 
+  // Force mobile menu on iPad (768px - 1024px)
+  function checkTabletMode() {
+    const width = window.innerWidth;
+    if (width >= 768 && width <= 1024) {
+      // Tablet mode - force mobile menu
+      console.log("Tablet mode detected");
+      if (mobileMenuBtn) mobileMenuBtn.style.display = "flex";
+      if (mobileMenu) mobileMenu.classList.remove("md:hidden");
+    } else {
+      // Normal mode
+      if (mobileMenuBtn) mobileMenuBtn.style.display = "";
+      if (mobileMenu) mobileMenu.classList.add("md:hidden");
+    }
+  }
+
+  // Check on load and resize
+  checkTabletMode();
+  window.addEventListener('resize', checkTabletMode);
+
   if (mobileMenuBtn && mobileMenu) {
     // Toggle menu when hamburger button is clicked
     mobileMenuBtn.addEventListener("click", function () {
