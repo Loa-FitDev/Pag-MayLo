@@ -2,21 +2,22 @@
 <html lang="es" class="scroll-smooth">
   <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WWSJHZX4');</script>
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WWSJHZX4');
+    </script>
     <!-- End Google Tag Manager -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "v6ou9jb6uu");
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "v6ou9jb6uu");
     </script>
     <script src="https://t.contentsquare.net/uxa/f739f6bc5007d.js"></script>
-
     <!-- Tailwind CSS - Deferred to reduce blocking -->
     <script src="https://cdn.tailwindcss.com" defer></script>
     <script>
@@ -24,42 +25,40 @@
       document.addEventListener('DOMContentLoaded', function() {
         if (window.tailwind) {
           tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Outfit', 'sans-serif'],
-            },
-            colors: {
-              // New Palette
-              'cloud-burst': '#203553',
-              'raffia': '#ecdbbd',
-              'gunsmoke': '#898e8d',
-              'alabaster': '#f9f9f9',
-              'nomad': '#bfb9a9',
-              'river-bed': '#4d5d6b',
-              'rhino': '#273f56',
-              
-              // Semantic Mappings (Updated)
-              primary: '#273f56', // rhino
-              secondary: '#898e8d', // gunsmoke
-              dark: '#ecdbbd', // raffia
-              textlight: '#203553', // cloud-burst
-              textdark: '#ecdbbd', // raffia
-              textred: '#B22C2C', // Kept as is
-              bglight: '#ecdbbd', // raffia
-              bgdark: '#203553', // cloud-burst
-              bgopaco: '#bfb9a9', // nomad
-              borderblack: '#203553', // cloud-burst
-              borderlight: '#bfb9a9', // nomad
+            darkMode: 'class',
+            theme: {
+              extend: {
+                fontFamily: {
+                  sans: ['Outfit', 'sans-serif'],
+                },
+                colors: {
+                  // New Palette
+                  'cloud-burst': '#203553',
+                  'raffia': '#ecdbbd',
+                  'gunsmoke': '#898e8d',
+                  'alabaster': '#f9f9f9',
+                  'nomad': '#bfb9a9',
+                  'river-bed': '#4d5d6b',
+                  'rhino': '#273f56',
+                  // Semantic Mappings (Updated)
+                  primary: '#273f56', // rhino
+                  secondary: '#898e8d', // gunsmoke
+                  dark: '#ecdbbd', // raffia
+                  textlight: '#203553', // cloud-burst
+                  textdark: '#ecdbbd', // raffia
+                  textred: '#B22C2C', // Kept as is
+                  bglight: '#ecdbbd', // raffia
+                  bgdark: '#203553', // cloud-burst
+                  bgopaco: '#bfb9a9', // nomad
+                  borderblack: '#203553', // cloud-burst
+                  borderlight: '#bfb9a9', // nomad
+                }
+              }
             }
-          }
-        }
           }
         }
       });
     </script>
-
     <!-- Dark mode initialization - critical -->
     <script>
       // Check for dark mode preference immediately
@@ -70,18 +69,60 @@
       }
     </script>
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "LyM Desarrollo Web Profesional",
+        "description": "Creamos sitios web profesionales que venden, informan y automatizan tu negocio. Diseño moderno, responsive y optimizado para resultados reales.",
+        "url": "https://lymdesarrolloweb.com.ar/",
+        "logo": "https://lymdesarrolloweb.com.ar/assets/img/MyL.png",
+        "image": "https://lymdesarrolloweb.com.ar/assets/img/og-image.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Justo",
+          "addressRegion": "Santa Fe",
+          "addressCountry": "AR"
+        },
+        "founder": [
+          {
+            "@type": "Person",
+            "name": "Loana Vera",
+            "jobTitle": "Desarrolladora Web",
+            "image": "https://lymdesarrolloweb.com.ar/assets/img/Loana.png"
+          },
+          {
+            "@type": "Person", 
+            "name": "Marcos Lescano",
+            "jobTitle": "Desarrollador Web",
+            "image": "https://lymdesarrolloweb.com.ar/assets/img/Marcos.png"
+          }
+        ],
+        "serviceType": ["Desarrollo Web", "Diseño Web", "Optimización Web", "Consultoría Digital"],
+        "areaServed": "Argentina",
+        "openingHours": "Mo-Fr 08:00-21:00 Sa 08:00-11:30 Sa 16:00-21:00",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "availableLanguage": "Spanish"
+        },
+        "sameAs": [
+        "https://lymdesarrolloweb.com.ar/"
+        ]
+      }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Desarrollo web profesional para negocios que buscan resultados. Diseñamos sitios modernos, rápidos y optimizados que trabajan por vos 24/7.">
     <meta name="keywords" content="desarrollo web, diseño web, sitio web, diseño responsivo, optimización web, consultoría digital">
     <meta name="author" content="LyM | Desarrollo Web">
     <meta name="theme-color" content="#273f56">
-    
     <!-- Cache Control Headers -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:type" content="website">
@@ -93,58 +134,13 @@
     <meta property="og:image" content="https://lymdesarrolloweb.com.ar/assets/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-
     <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="https://lymdesarrolloweb.com.ar/assets/img/og-image.jpg">
     <meta name="twitter:title" content="LyM Desarrollo Web Profesional | Sitios que convierten">
     <meta name="twitter:description" content="Creamos sitios web profesionales que venden, informan y automatizan tu negocio. Diseño moderno, responsive y optimizado para resultados reales.">
     <meta name="twitter:image" content="https://lymdesarrolloweb.com.ar/assets/img/og-image.jpg">
 
-     <title>LyM Desarrollo Web Profesional | Sitios que convierten</title>
-
-     <!-- Structured Data -->
-     <script type="application/ld+json">
-     {
-       "@context": "https://schema.org",
-       "@type": "ProfessionalService",
-       "name": "LyM Desarrollo Web Profesional",
-       "description": "Creamos sitios web profesionales que venden, informan y automatizan tu negocio. Diseño moderno, responsive y optimizado para resultados reales.",
-       "url": "https://lymdesarrolloweb.com.ar/",
-       "logo": "https://lymdesarrolloweb.com.ar/assets/img/MyL.png",
-       "image": "https://lymdesarrolloweb.com.ar/assets/img/og-image.jpg",
-       "address": {
-         "@type": "PostalAddress",
-         "addressLocality": "San Justo",
-         "addressRegion": "Santa Fe",
-         "addressCountry": "AR"
-       },
-       "founder": [
-         {
-           "@type": "Person",
-           "name": "Loana Vera",
-           "jobTitle": "Desarrolladora Web",
-           "image": "https://lymdesarrolloweb.com.ar/assets/img/Loana.png"
-         },
-         {
-           "@type": "Person", 
-           "name": "Marcos Lescano",
-           "jobTitle": "Desarrollador Web",
-           "image": "https://lymdesarrolloweb.com.ar/assets/img/Marcos.png"
-         }
-       ],
-       "serviceType": ["Desarrollo Web", "Diseño Web", "Optimización Web", "Consultoría Digital"],
-       "areaServed": "Argentina",
-       "openingHours": "Mo-Fr 08:00-21:00 Sa 08:00-11:30 Sa 16:00-21:00",
-       "contactPoint": {
-         "@type": "ContactPoint",
-         "contactType": "customer service",
-         "availableLanguage": "Spanish"
-       },
-       "sameAs": [
-         "https://lymdesarrolloweb.com.ar/"
-       ]
-     }
-     </script>
+    <title>LyM Desarrollo Web Profesional | Sitios que convierten</title>
 
     <link rel="shortcut icon" href="assets/img/MyL.png?v=20250124" type="image/x-icon">
     <link rel="canonical" href="https://lymdesarrolloweb.com.ar/">
@@ -254,246 +250,223 @@
       </nav>
     </header>
     <main id="main-content">
-        <!-- Hero Section -->
-        <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden scroll-mt-20 md:h-screen md:max-h-[800px]">
-            <!-- Background Gradient -->
-            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-raffia via-alabaster to-alabaster dark:from-rhino via-cloud-burst to-cloud-burst -z-10"></div>
-            
-             <!-- Centered Content Container -->
-             <div class="relative z-10 mb-44 flex flex-col items-center justify-center gap-2 mt-28 md:-mt-56">
-                 <!-- H1 for SEO - hidden visually but accessible -->
-                 <h1 class="sr-only">LyM Desarrollo Web Profesional - Sitios que convierten para tu negocio</h1>
-                 
-                 <!-- Zigzag Animation Container -->
-                <div class="zigzag__container">
-                    <div class="zigzag__item" style="--i: 0;">
-                        <span><b>L</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 1;">
-                        <span><b>&</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 2;">
-                        <span><b>M</b></span>
-                    </div>
-                </div>
-                <div class="zigzag__container">
-                    <div class="zigzag__item" style="--i: 0;">
-                        <span><b>L</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 1;">
-                        <span><b>&</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 2;">
-                        <span><b>M</b></span>
-                    </div>
-                </div> 
-                
-                <!-- DESARROLLO WEB Zigzag Animation -->
-                <div class="zigzag__container desarrollo-web-text mt-72">
-                    <div class="zigzag__item" style="--i: 0;">
-                        <span><b>D</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 1;">
-                        <span><b>E</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 2;">
-                        <span><b>S</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 3;">
-                        <span><b>A</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 4;">
-                        <span><b>R</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 5;">
-                        <span><b>R</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 6;">
-                        <span><b>O</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 7;">
-                        <span><b>L</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 8;">
-                        <span><b>O</b></span>
-                    </div>
-                    
-                </div>
-                <div class="zigzag__container desarrollo-web-text mt-72">
-                    <div class="zigzag__item" style="--i: 0;">
-                        <span><b>D</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 1;">
-                        <span><b>E</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 2;">
-                        <span><b>S</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 3;">
-                        <span><b>A</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 4;">
-                        <span><b>R</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 5;">
-                        <span><b>R</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 6;">
-                        <span><b>O</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 7;">
-                        <span><b>L</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 8;">
-                        <span><b>O</b></span>
-                    </div>
-                    
-                </div>
-                <div class="zigzag__container desarrollo-web-text mt-[36rem]">
-                    <div class="zigzag__item" style="--i: 9;">
-                        <span><b>W</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 10;">
-                        <span><b>E</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 11;">
-                        <span><b>B</b></span>
-                    </div>
-                </div>
-                <div class="zigzag__container desarrollo-web-text mt-[36rem]">
-                        <div class="zigzag__item" style="--i: 9;">
-                        <span><b>W</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 10;">
-                        <span><b>E</b></span>
-                    </div>
-                    <div class="zigzag__item" style="--i: 11;">
-                        <span><b>B</b></span>
-                    </div>
-                </div>
-                
-                
-                <!-- Hero Content -->
-                <div class="text-center mt-[32rem] px-4 max-w-4xl md:mt-[60rem]">
-                    <p class="animate-fade-in-up text-textlight dark:text-textdark font-bold mb-8 text-lg md:text-[24px]" style="animation-delay: 0.4s;">
-                        Hacemos que tu negocio crezca: una página web profesional que responde por vos, organiza tu trabajo
-                        y atrae clientes incluso cuando no estás conectado.
-                    </p>
-                    <div class="flex justify-center pb-6 gap-4 animate-fade-in-up" style="animation-delay: 0.6s;">
-                        <a href="#contacto" class="glass-btn glass-btn-primary">
-                            Empezar Proyecto
-                        </a>
-                        <a href="#nosotros" class="glass-btn glass-btn-secondary">
-                            Conocer más
-                        </a>
-                    </div>
-                </div>
+      <!-- Hero Section -->
+      <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden scroll-mt-20 md:h-screen md:max-h-[800px]">
+        <!-- Background Gradient -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-raffia via-alabaster to-alabaster dark:from-rhino via-cloud-burst to-cloud-burst -z-10"></div>
+
+        <!-- Centered Content Container -->
+        <div class="relative z-10 mb-44 flex flex-col items-center justify-center gap-2 mt-28 md:-mt-56">
+          <!-- H1 for SEO - hidden visually but accessible -->
+          <h1 class="sr-only">LyM Desarrollo Web Profesional - Sitios que convierten para tu negocio</h1>
+
+          <!-- Zigzag 'L&M' Container -->
+          <div class="zigzag__container">
+            <div class="zigzag__item" style="--i: 0;">
+              <span><b>L</b></span>
             </div>
-        </section>
+            <div class="zigzag__item" style="--i: 1;">
+              <span><b>&</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 2;">
+              <span><b>M</b></span>
+            </div>
+          </div>
+          <div class="zigzag__container">
+            <div class="zigzag__item" style="--i: 0;">
+              <span><b>L</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 1;">
+              <span><b>&</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 2;">
+              <span><b>M</b></span>
+            </div>
+          </div>
 
-        <!-- Nosotros Section -->
-        <section id="nosotros"
-    class="services-section py-4 bg-raffia dark:bg-cloud-burst scroll-mt-20">
+          <!-- Zigzag 'DESARROLLO' Container -->
+          <div class="zigzag__container desarrollo-web-text mt-72">
+            <div class="zigzag__item" style="--i: 0;">
+              <span><b>D</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 1;">
+              <span><b>E</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 2;">
+              <span><b>S</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 3;">
+              <span><b>A</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 4;">
+              <span><b>R</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 5;">
+              <span><b>R</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 6;">
+              <span><b>O</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 7;">
+              <span><b>L</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 8;">
+              <span><b>O</b></span>
+            </div>
+          </div>
+          <div class="zigzag__container desarrollo-web-text mt-72">
+            <div class="zigzag__item" style="--i: 0;">
+              <span><b>D</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 1;">
+              <span><b>E</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 2;">
+              <span><b>S</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 3;">
+              <span><b>A</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 4;">
+              <span><b>R</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 5;">
+              <span><b>R</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 6;">
+              <span><b>O</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 7;">
+              <span><b>L</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 8;">
+              <span><b>O</b></span>
+            </div>
+          </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-            class="glass-card glass-card-alt rounded-3xl p-8  relative overflow-hidden">
+          <!-- Zigzag 'WEB' Container -->
+          <div class="zigzag__container desarrollo-web-text mt-[36rem]">
+            <div class="zigzag__item" style="--i: 9;">
+              <span><b>W</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 10;">
+              <span><b>E</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 11;">
+              <span><b>B</b></span>
+            </div>
+          </div>
+          <div class="zigzag__container desarrollo-web-text mt-[36rem]">
+            <div class="zigzag__item" style="--i: 9;">
+              <span><b>W</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 10;">
+              <span><b>E</b></span>
+            </div>
+            <div class="zigzag__item" style="--i: 11;">
+              <span><b>B</b></span>
+            </div>
+          </div>
 
+          <!-- Hero Content -->
+          <div class="text-center mt-[32rem] px-4 max-w-4xl md:mt-[60rem]">
+            <p class="animate-fade-in-up text-textlight dark:text-textdark font-bold mb-8 text-lg md:text-[24px]" style="animation-delay: 0.4s;">
+              Hacemos que tu negocio crezca: una página web profesional que responde por vos, organiza tu trabajo
+              y atrae clientes incluso cuando no estás conectado.
+            </p>
+            <div class="flex justify-center pb-6 gap-4 animate-fade-in-up" style="animation-delay: 0.6s;">
+              <a href="#contacto" class="glass-btn glass-btn-primary">
+                Empezar Proyecto
+              </a>
+              <a href="#nosotros" class="glass-btn glass-btn-secondary">
+                Conocer más
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Nosotros Section -->
+      <section id="nosotros" class="services-section py-4 bg-raffia dark:bg-cloud-burst scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="glass-card glass-card-alt rounded-3xl p-8  relative overflow-hidden">
             <!-- TÍTULO -->
-            <h3
-                class="text-3xl md:text-4xl text-center font-bold text-textlight dark:text-textdark mb-6">
-                Quiénes Somos
+            <h3 class="text-3xl md:text-4xl text-center font-bold text-textlight dark:text-textdark mb-6">
+              Quiénes Somos
             </h3>
-
             <!-- GRID DE 4 CARDS -->
             <div class="grid sm:grid-cols-2 gap-8 max-w-5xl mx-auto text-left">
-
-                <!-- CARD 1 -->
-                <div class="card bg-cloud-burst/80  p-10 relative rounded-3xl overflow-hidden">
-                    <div class="circle"></div>
-                    <div class="relative z-10">
-                        <h2 class="text-2xl mb-4 text-textdark">
-                            Nuestra Identidad
-                        </h2>
-                        <p class="text-textlight leading-relaxed">
-                            Somos Loana y Marcos (L&M Studio), un equipo de desarrollo de San Justo, Santa Fe,
-                            enfocado en crear soluciones digitales que combinan diseño, tecnología y rendimiento.
-                        </p>
-                    </div>
+              <!-- CARD 1 -->
+              <div class="card bg-cloud-burst/80  p-10 relative rounded-3xl overflow-hidden">
+                <div class="circle"></div>
+                <div class="relative z-10">
+                  <h2 class="text-2xl mb-4 text-textdark">
+                    Nuestra Identidad
+                  </h2>
+                  <p class="text-textlight leading-relaxed">
+                    Somos Loana y Marcos (L&M Studio), un equipo de desarrollo de San Justo, Santa Fe,
+                    enfocado en crear soluciones digitales que combinan diseño, tecnología y rendimiento.
+                  </p>
                 </div>
-
-                <!-- CARD 2 -->
-                <div class="card bg-cloud-burst/80 dark:bg-rhino p-10 relative rounded-3xl overflow-hidden">
-                    <div class="circle"></div>
-                    <div class="relative z-10">
-                        <h2 class="text-2xl mb-4 text-textdark">
-                            Cómo Trabajamos
-                        </h2>
-                        <p class="text-textlight text-base leading-relaxed">
-                            Trabajamos de forma remota con una comunicación clara y una organización online simple. Nos capacitamos constantemente para ofrecer soluciones modernas, rápidas y bien diseñadas.
-                        </p>
-                    </div>
+              </div>
+              <!-- CARD 2 -->
+              <div class="card bg-cloud-burst/80 dark:bg-rhino p-10 relative rounded-3xl overflow-hidden">
+                <div class="circle"></div>
+                <div class="relative z-10">
+                  <h2 class="text-2xl mb-4 text-textdark">
+                    Cómo Trabajamos
+                  </h2>
+                  <p class="text-textlight text-base leading-relaxed">
+                    Trabajamos de forma remota con una comunicación clara y una organización online simple. Nos capacitamos constantemente para ofrecer soluciones modernas, rápidas y bien diseñadas.
+                  </p>
                 </div>
-
-                <!-- CARD 3 -->
-                <div class="card bg-cloud-burst/80 dark:bg-rhino p-10 relative rounded-3xl overflow-hidden">
-                    <div class="circle"></div>
-                    <div class="relative z-10">
-                        <h2 class="text-2xl mb-4 text-textdark">
-                            Trabajo en Equipo
-                        </h2>
-                        <p class="text-textlight leading-relaxed">
-                            Como equipo, trabajamos de manera colaborativa en cada proyecto, sin divisiones de roles fijas. Compartimos decisiones técnicas y creativas para garantizar un desarrollo completo, coherente y de alta calidad, desde el inicio hasta la entrega final.
-                        </p>
-                    </div>
+              </div>
+              <!-- CARD 3 -->
+              <div class="card bg-cloud-burst/80 dark:bg-rhino p-10 relative rounded-3xl overflow-hidden">
+                <div class="circle"></div>
+                <div class="relative z-10">
+                  <h2 class="text-2xl mb-4 text-textdark">
+                    Trabajo en Equipo
+                  </h2>
+                  <p class="text-textlight leading-relaxed">
+                    Como equipo, trabajamos de manera colaborativa en cada proyecto, sin divisiones de roles fijas. Compartimos decisiones técnicas y creativas para garantizar un desarrollo completo, coherente y de alta calidad, desde el inicio hasta la entrega final.
+                  </p>
                 </div>
-
-                <!-- CARD 4 – PERFILES -->
-                <div
-                    class="card bg-cloud-burst/80 dark:bg-rhino p-10 relative rounded-3xl overflow-hidden">
-                    <div class="circle"></div>
-
-                    <div
-                        class="relative z-10 flex flex-col md:flex-row items-center justify-center gap-10">
-
-                        <!-- Loana -->
-                         <div class="text-center max-w-xs">
-                             <img src="assets/img/Loana.png" alt="Loana Vera - Desarrolladora web profesional en LyM"
-                                 class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                                 width="96" height="96" loading="lazy" />
-                            <h4 class="text-lg font-semibold text-textdark mb-2">
-                                Loana Vera
-                            </h4>
-                            <p class="text-sm text-textlight leading-relaxed">
-                                Desarrollo soluciones digitales enfocadas en diseño, usabilidad y experiencia
-                                de usuario profesional.
-                            </p>
-                        </div>
-
-                        <!-- Marcos -->
-                         <div class="text-center max-w-xs">
-                             <img src="assets/img/Marcos.png" alt="Marcos Lescano - Desarrollador web profesional en LyM"
-                                 class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                                 width="96" height="96" loading="lazy" />
-                            <h4 class="text-lg font-semibold text-textdark mb-2">
-                                Marcos Lescano
-                            </h4>
-                            <p class="text-sm text-textlight leading-relaxed">
-                                Desarrollo soluciones web robustas, escalables y optimizadas, cuidando
-                                arquitectura y rendimiento.
-                            </p>
-                        </div>
-
-                    </div>
+              </div>
+              <!-- CARD 4 – PERFILES -->
+              <div class="card bg-cloud-burst/80 dark:bg-rhino p-10 relative rounded-3xl overflow-hidden">
+                <div class="circle"></div>
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-center gap-10">
+                  <!-- Loana -->
+                  <div class="text-center max-w-xs">
+                    <img src="assets/img/Loana.png" alt="Loana Vera - Desarrolladora web profesional en LyM" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" width="96" height="96" loading="lazy"/>
+                    <h4 class="text-lg font-semibold text-textdark mb-2">
+                      Loana Vera
+                    </h4>
+                    <p class="text-sm text-textlight leading-relaxed">
+                      Desarrollo soluciones digitales enfocadas en diseño, usabilidad y experiencia
+                      de usuario profesional.
+                    </p>
+                  </div>
+                  <!-- Marcos -->
+                  <div class="text-center max-w-xs">
+                    <img src="assets/img/Marcos.png" alt="Marcos Lescano - Desarrollador web profesional en LyM" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" width="96" height="96" loading="lazy"/>
+                    <h4 class="text-lg font-semibold text-textdark mb-2">
+                      Marcos Lescano
+                    </h4>
+                    <p class="text-sm text-textlight leading-relaxed">
+                      Desarrollo soluciones web robustas, escalables y optimizadas, cuidando
+                      arquitectura y rendimiento.
+                    </p>
+                  </div>
                 </div>
-
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </section>
 
-
-        <!-- Servicios Section -->
+      <!-- Servicios Section -->
 <section id="servicios" class="py-8 bg-raffia/30 dark:bg-rhino scroll-mt-20">
     <div class="max-w-7xl mx-auto mb-12 px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
