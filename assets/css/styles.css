@@ -1822,7 +1822,7 @@ details[open] .faq-summary::before {
   /* HERO CONTAINER RESTRUCTURE - iPad fix */
   #inicio .relative.z-10.mb-44 {
     position: relative !important;
-    margin-top: 26rem !important;
+    margin-top: 36rem !important;
     margin-bottom: 2rem !important;
     min-height: 70vh !important;
     display: flex !important;
@@ -1840,8 +1840,7 @@ details[open] .faq-summary::before {
   }
   
   #inicio .zigzag__container:not(.desarrollo-web-text):nth-child(2) {
-    transform: scale(0.9) rotate(180deg) !important;
-    margin-bottom: 1rem !important;
+    display: none !important;
   }
   
   /* HIDE DESARROLLO WEB and WEB in iPad - only show L&M */
