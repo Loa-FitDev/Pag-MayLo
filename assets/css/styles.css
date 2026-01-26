@@ -1822,7 +1822,7 @@ details[open] .faq-summary::before {
   /* HERO CONTAINER RESTRUCTURE - iPad fix */
   #inicio .relative.z-10.mb-44 {
     position: relative !important;
-    margin-top: 4rem !important;
+    margin-top: 26rem !important;
     margin-bottom: 2rem !important;
     min-height: 70vh !important;
     display: flex !important;
