@@ -1813,7 +1813,7 @@ details[open] .faq-summary::before {
 }
 
 /* iPad Hero Fix - 768px to 1024px */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   /* Hide desktop nav on iPad */
   .glass-nav .hidden.md\:flex {
     display: none !important;
@@ -1889,10 +1889,150 @@ details[open] .faq-summary::before {
     top: 80px !important;
   }
   
-  .mobile-menu-link {
+  .mobile-menu_link {
     padding: 1rem !important;
     font-size: 1rem !important;
   }
+}
+
+/* PC/Desktop fix - RESTORE ORIGINAL BEHAVIOR - HIGH PRIORITY */
+@media screen and (min-width: 1024px) {
+  /* SHOW DESKTOP NAV */
+  .glass-nav .hidden.md\:flex {
+    display: flex !important;
+  }
+  
+  /* HIDE MOBILE MENU BUTTON */
+  .md\:hidden.flex.items-center.gap-2.sm\:gap-4 {
+    display: none !important;
+  }
+  
+  /* RESTORE ORIGINAL HERO CONTAINER */
+  #inicio .relative.z-10.mb-44 {
+    position: relative !important;
+    margin-top: 28px !important;
+    margin-bottom: 11rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2px !important;
+  }
+  
+  /* SHOW ONLY FIRST ZIGZAG CONTAINERS IN PC - HIDE DUPLICATES */
+  #inicio .zigzag__container:nth-child(1) {
+    position: absolute !important;
+    display: flex !important;
+    gap: 38px !important;
+  }
+  
+  /* HIDE SECOND L&M */
+  #inicio .zigzag__container:nth-child(2) {
+    display: none !important;
+  }
+  
+  /* SHOW ONLY FIRST DESARROLLO WEB IN PC - HIDE DUPLICATE */
+  #inicio .zigzag__container:nth-child(5) {
+    position: absolute !important;
+    margin-top: 18rem !important;
+    display: flex !important;
+    gap: 38px !important;
+  }
+  
+  #inicio .zigzag__container:nth-child(6) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    z-index: -9999 !important;
+  }
+  
+  /* SHOW DESARROLLO WEB IN PC - FIRST ONLY */
+  #inicio .zigzag__container.desarrollo-web-text:not(.mt-\[36rem\]):nth-child(5) {
+    position: absolute !important;
+    margin-top: 18rem !important;
+    display: flex !important;
+    gap: 38px !important;
+  }
+  
+  /* NUCLEAR OPTION: Hide all desarrollo-web except the first one */
+  #inicio .zigzag__container.desarrollo-web-text:not(:nth-of-type(5)) {
+    display: none !important;
+  }
+  
+  /* SHOW FIRST WEB, HIDE SECOND */
+  #inicio .zigzag__container.desarrollo-web-text.mt-\[36rem\]:nth-child(7) {
+    position: absolute !important;
+    margin-top: 36rem !important;
+    display: flex !important;
+    gap: 38px !important;
+  }
+  
+  #inicio .zigzag__container.desarrollo-web-text.mt-\[36rem\]:nth-child(8) {
+    display: none !important;
+  }
+  
+  /* RESTORE HERO CONTENT POSITION - MORE DOWN IN PC */
+  #inicio .text-center.mt-\[32rem\] {
+    position: relative !important;
+    margin-top: 52rem !important;
+    padding: 0 1rem !important;
+  }
+  
+  /* RESTORE ORIGINAL SIZES */
+  .zigzag__item {
+    height: 100px !important;
+    width: 100px !important;
+  }
+  
+  .zigzag__item span b {
+    font-size: 2em !important;
+  }
+  
+  /* HIDE MOBILE MENU */
+  .mobile-menu {
+    display: none !important;
+  }
+  
+  /* FIX GRID LAYOUTS IN PC - NOSOTROS, SERVICIOS, PROYECTOS, HORARIOS */
+  #nosotros .grid.sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    display: grid !important;
+    gap: 2rem !important;
+  }
+  
+  #servicios .grid.md\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    display: grid !important;
+    gap: 2rem !important;
+  }
+  
+  #proyectos .grid.md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(400px, 1fr)) !important;
+    display: grid !important;
+    gap: 3rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+  }
+  
+  #horarios .grid.md\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    display: grid !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Ensure cards don't stack incorrectly */
+  #servicios .card,
+  #proyectos .glass-card {
+    display: block !important;
+    position: relative !important;
+  }
+  
+
+  
+
 }
 
 /* 980x1024 resolution specific fix - SAME AS IPAD BUT WITH DESARROLLO WEB */
