@@ -1931,11 +1931,11 @@ details[open] .faq-summary::before {
     display: none !important;
   }
   
-  /* SHOW FIRST DESARROLLO, HIDE SECOND */
+  /* SHOW FIRST DESARROLLO, HIDE SECOND - SAME SIZE AS L&M */
   #inicio .zigzag__container:nth-child(5) {
     position: relative !important;
     margin: 1rem 0 !important;
-    transform: scale(0.6) !important;
+    transform: scale(0.9) !important;
     display: flex !important;
   }
   
@@ -1943,11 +1943,11 @@ details[open] .faq-summary::before {
     display: none !important;
   }
   
-  /* SHOW FIRST WEB, HIDE SECOND */
+  /* SHOW FIRST WEB, HIDE SECOND - SAME SIZE AS L&M */
   #inicio .zigzag__container:nth-child(7) {
     position: relative !important;
     margin: 0.5rem 0 !important;
-    transform: scale(0.5) !important;
+    transform: scale(0.9) !important;
     display: flex !important;
   }
   
