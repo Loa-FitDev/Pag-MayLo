@@ -1812,4 +1812,124 @@ details[open] .faq-summary::before {
   left: 0;
 }
 
+/* iPad Hero Fix - 768px to 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Hide desktop nav on iPad */
+  .glass-nav .hidden.md\:flex {
+    display: none !important;
+  }
+
+  /* HERO CONTAINER RESTRUCTURE - iPad fix */
+  #inicio .relative.z-10.mb-44 {
+    position: relative !important;
+    margin-top: 4rem !important;
+    margin-bottom: 2rem !important;
+    min-height: 70vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.5rem !important;
+  }
+  
+  /* L&M containers - positioned properly */
+  #inicio .zigzag__container:not(.desarrollo-web-text) {
+    position: relative !important;
+    margin-bottom: 0.5rem !important;
+    transform: scale(0.9) !important;
+  }
+  
+  #inicio .zigzag__container:not(.desarrollo-web-text):nth-child(2) {
+    transform: scale(0.9) rotate(180deg) !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* HIDE DESARROLLO WEB and WEB in iPad - only show L&M */
+  #inicio .zigzag__container.desarrollo-web-text {
+    display: none !important;
+  }
+  
+  /* Hero content - finally in the right place! */
+  #inicio .text-center.mt-\[32rem\] {
+    position: relative !important;
+    margin-top: 2rem !important;
+    padding: 0 1rem !important;
+  }
+  
+  /* Override all the ridiculous margins */
+  #inicio .mt-\[32rem\],
+  #inicio .mt-\[36rem\],
+  #inicio .mt-\[60rem\],
+  #inicio .mt-72 {
+    margin-top: 0 !important;
+  }
+  
+  /* Adjust zigzag containers for tablet */
+  .zigzag__container {
+    gap: 35px;
+  }
+  
+  .zigzag__item {
+    height: 80px;
+    width: 80px;
+  }
+  
+  .zigzag__item span b {
+    font-size: 1.8em;
+  }
+  
+  /* Show mobile menu button on iPad */
+  .md\:hidden.flex.items-center.gap-2.sm\:gap-4 {
+    display: flex !important;
+  }
+  
+  /* Adjust mobile menu for iPad */
+  .mobile-menu {
+    width: 300px !important;
+    right: 0 !important;
+    top: 80px !important;
+  }
+  
+  .mobile-menu-link {
+    padding: 1rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* 980x1024 resolution specific fix */
+@media screen and (min-width: 960px) and (max-width: 1000px) and (min-height: 1000px) and (max-height: 1050px) {
+  #inicio .relative.z-10.mb-44 {
+    margin-top: 3rem !important;
+    min-height: 60vh !important;
+    gap: 0.3rem !important;
+  }
+  
+  #inicio .zigzag__container:not(.desarrollo-web-text) {
+    transform: scale(0.8) !important;
+  }
+  
+  #inicio .zigzag__container.desarrollo-web-text {
+    transform: scale(0.5) !important;
+    margin: 0.5rem 0 !important;
+  }
+  
+  #inicio .zigzag__container.desarrollo-web-text.mt-\[36rem\] {
+    transform: scale(0.4) !important;
+    margin: 0.3rem 0 !important;
+  }
+  
+  #inicio .text-center.mt-\[32rem\] {
+    margin-top: 1.5rem !important;
+  }
+  
+  .zigzag__item {
+    height: 70px;
+    width: 70px;
+  }
+  
+  .zigzag__item span b {
+    font-size: 1.5em;
+  }
+}
+
 
