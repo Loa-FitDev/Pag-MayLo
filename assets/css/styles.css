@@ -1895,39 +1895,110 @@ details[open] .faq-summary::before {
   }
 }
 
-/* 980x1024 resolution specific fix */
+/* 980x1024 resolution specific fix - SAME AS IPAD BUT WITH DESARROLLO WEB */
 @media screen and (min-width: 960px) and (max-width: 1000px) and (min-height: 1000px) and (max-height: 1050px) {
+  /* Hide desktop nav */
+  .glass-nav .hidden.md\:flex {
+    display: none !important;
+  }
+
+  /* HERO CONTAINER - same as iPad */
   #inicio .relative.z-10.mb-44 {
-    margin-top: 3rem !important;
-    min-height: 60vh !important;
-    gap: 0.3rem !important;
+    position: relative !important;
+    margin-top: 26rem !important;
+    margin-bottom: 2rem !important;
+    min-height: 70vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.5rem !important;
   }
   
+  /* L&M containers - hide second duplicate */
   #inicio .zigzag__container:not(.desarrollo-web-text) {
-    transform: scale(0.8) !important;
+    position: relative !important;
+    margin-bottom: 0.5rem !important;
+    transform: scale(0.9) !important;
   }
   
-  #inicio .zigzag__container.desarrollo-web-text {
-    transform: scale(0.5) !important;
+  #inicio .zigzag__container:not(.desarrollo-web-text):nth-child(2) {
+    display: none !important;
+  }
+  
+  /* SHOW FIRST L&M, HIDE SECOND */
+  #inicio .zigzag__container:nth-child(2) {
+    display: none !important;
+  }
+  
+  /* SHOW FIRST DESARROLLO, HIDE SECOND */
+  #inicio .zigzag__container:nth-child(5) {
+    position: relative !important;
+    margin: 1rem 0 !important;
+    transform: scale(0.6) !important;
+    display: flex !important;
+  }
+  
+  #inicio .zigzag__container:nth-child(6) {
+    display: none !important;
+  }
+  
+  /* SHOW FIRST WEB, HIDE SECOND */
+  #inicio .zigzag__container:nth-child(7) {
+    position: relative !important;
     margin: 0.5rem 0 !important;
+    transform: scale(0.5) !important;
+    display: flex !important;
   }
   
-  #inicio .zigzag__container.desarrollo-web-text.mt-\[36rem\] {
-    transform: scale(0.4) !important;
-    margin: 0.3rem 0 !important;
+  #inicio .zigzag__container:nth-child(8) {
+    display: none !important;
   }
   
+  /* Hero content - same positioning as iPad */
   #inicio .text-center.mt-\[32rem\] {
-    margin-top: 1.5rem !important;
+    position: relative !important;
+    margin-top: 2rem !important;
+    padding: 0 1rem !important;
+  }
+  
+  /* Override all the ridiculous margins */
+  #inicio .mt-\[32rem\],
+  #inicio .mt-\[36rem\],
+  #inicio .mt-\[60rem\],
+  #inicio .mt-72 {
+    margin-top: 0 !important;
+  }
+  
+  /* Adjust zigzag containers */
+  .zigzag__container {
+    gap: 35px;
   }
   
   .zigzag__item {
-    height: 70px;
-    width: 70px;
+    height: 80px;
+    width: 80px;
   }
   
   .zigzag__item span b {
-    font-size: 1.5em;
+    font-size: 1.8em;
+  }
+  
+  /* Show mobile menu button */
+  .md\:hidden.flex.items-center.gap-2.sm\:gap-4 {
+    display: flex !important;
+  }
+  
+  /* Adjust mobile menu */
+  .mobile-menu {
+    width: 300px !important;
+    right: 0 !important;
+    top: 80px !important;
+  }
+  
+  .mobile-menu-link {
+    padding: 1rem !important;
+    font-size: 1rem !important;
   }
 }
 
