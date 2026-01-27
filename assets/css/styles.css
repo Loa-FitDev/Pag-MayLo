@@ -1236,12 +1236,6 @@ details[open] .faq-summary::before {
   border-color: #db2777;
 }
 
-#inicio {
-  display: flex;
-  position: relative;
-  overflow: hidden;
-}
-
 /*========== Responsive typography ==========*/
 @media screen and (min-width: 968px) {
   :root {
@@ -1263,15 +1257,7 @@ details[open] .faq-summary::before {
   transform: rotate(180deg);
   z-index: -1;
 }
-.zigzag__container:nth-child(4) {
-  transform: rotate(180deg);
-  z-index: -1;
-}
 
-.zigzag__container:nth-child(6) {
-  transform: rotate(180deg);
-  z-index: -1;
-}
 .zigzag__item {
   display: block;
   height: 100px;
@@ -1280,7 +1266,92 @@ details[open] .faq-summary::before {
   overflow: hidden;
   transform: rotate(315deg);
 }
+.zigzag__item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(0deg, transparent, var(--skin-color));
+  transform: translateX(-100%);
+  animation: animateBefore 4s linear infinite;
+  animation-delay: calc(1s * var(--i));
+}
+.zigzag__item::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--skin-color));
+  transform: translateY(-100%);
+  animation: animateAfter 4s linear infinite;
+  animation-delay: calc(1s * var(--i));
+}
+.zigzag__item span {
+  position: absolute;
+  cursor: pointer;
+  inset: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #203553;
+  outline: 1px solid #ecdbbd;
+  transition: 0.3s linear;
+}
+.zigzag__container:nth-child(1) .zigzag__item span:hover {
+  outline-offset: -5px;
+}
+.zigzag__item span b {
+  font-weight: normal;
+  font-size: 2em;
+  transform: rotate(45deg);
+  color: #ecdbbd;
+}
+/* Hover effect for all zigzag containers */
+.zigzag__container .zigzag__item span:hover {
+  outline-offset: -5px;
+}
 
+@media screen and (max-width: 1300px) {
+  .zigzag__container {
+    scale: 0.8;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .zigzag__container {
+    scale: 0.6;
+  }
+}
+
+@media screen and (max-width:768px){
+  .lym{
+    scale: 1;
+  }
+}
+
+@media screen and (max-width:440px) {
+  .lym{
+    scale: 0.7;
+  }
+  .glass-btn{
+    padding: 16px;
+  }
+  .glass-btn-secondary{
+    font-size: small;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 55%;
+  }
+  .glass-btn-primary{
+    font-size: small;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 55%;
+  }
+}
 
   
   /* Hide desktop nav on iPad */
@@ -1288,31 +1359,6 @@ details[open] .faq-summary::before {
     display: none !important;
   }
 
-  /* Hero section adjustments for iPad */
-  .hero-ipad-adjust {
-    margin-top: 2rem !important;
-  }
-  
-  /* Adjust zigzag containers for tablet */
-  .zigzag__container {
-    gap: 45px;
-    transform: scale(0.8);
-  }
-  
-  .zigzag__item {
-    height: 90px;
-    width: 90px;
-  }
-  
-  .zigzag__item span b {
-    font-size: 2em;
-  }
-  
-  /* Keep DESARROLLO WEB visible but smaller */
-  .desarrollo-web-text {
-    transform: scale(0.7);
-    margin-top: 3rem !important;
-  }
   
   /* Adjust hero content positioning */
   .relative.z-10.mb-44 {
@@ -1522,53 +1568,6 @@ details[open] .faq-summary::before {
     min-height: 44px !important;
     min-width: 44px !important;
   }
-}
-
-/* Responsive zigzag */
-@media screen and (max-width: 768px) {
-  .zigzag__container {
-    gap: 30px;
-  }
-
-  .zigzag__item {
-    height: 100px;
-    width: 100px;
-  }
-
-  .zigzag__item span b {
-    font-size: 2.2em;
-  }
-
-  /* Hide DESARROLLO WEB containers in mobile */
-  .desarrollo-web-text {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .zigzag__container {
-    gap: 25px;
-  }
-
-  .zigzag__item {
-    height: 90px;
-    width: 90px;
-  }
-
-  .zigzag__item span b {
-    font-size: 2.5em;
-  }
-}
-.zigzag__item::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(0deg, transparent, var(--skin-color));
-  transform: translateX(-100%);
-  animation: animateBefore 4s linear infinite;
-  animation-delay: calc(1s * var(--i));
-}
 @keyframes animateBefore {
   0% {
     transform: translateX(-100%);
@@ -1578,17 +1577,7 @@ details[open] .faq-summary::before {
     transform: translateX(100%);
   }
 }
-.zigzag__item::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, var(--skin-color));
-  transform: translateY(-100%);
-  animation: animateAfter 4s linear infinite;
-  animation-delay: calc(1s * var(--i));
-}
+
 @keyframes animateAfter {
   0%,
   12.5% {
@@ -1598,31 +1587,6 @@ details[open] .faq-summary::before {
   100% {
     transform: translateY(100%);
   }
-}
-.zigzag__item span {
-  position: absolute;
-  cursor: pointer;
-  inset: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #203553;
-  outline: 1px solid #ecdbbd;
-  transition: 0.3s linear;
-}
-.zigzag__container:nth-child(1) .zigzag__item span:hover {
-  outline-offset: -5px;
-}
-.zigzag__item span b {
-  font-weight: normal;
-  font-size: 2em;
-  transform: rotate(45deg);
-  color: #ecdbbd;
-}
-
-/* Hover effect for all zigzag containers */
-.zigzag__container .zigzag__item span:hover {
-  outline-offset: -5px;
 }
 
 /* Background Image Layer */
@@ -1639,16 +1603,6 @@ details[open] .faq-summary::before {
   /* Evitar bloquear renderizado */
   will-change: transform;
   transform: translateZ(0);
-}
-
-/* Mobile hero height adjustment */
-@media screen and (max-width: 768px) {
-  #inicio {
-    height: 620px !important;
-    min-height: 570px !important;
-    max-height: 620px !important;
-    padding-bottom: 3rem;
-  }
 }
 
 /* Acrylic Effect Overlay */
@@ -1818,64 +1772,6 @@ details[open] .faq-summary::before {
   .glass-nav .hidden.md\:flex {
     display: none !important;
   }
-
-  /* HERO CONTAINER RESTRUCTURE - iPad fix */
-  #inicio .relative.z-10.mb-44 {
-    position: relative !important;
-    margin-top: 36rem !important;
-    margin-bottom: 2rem !important;
-    min-height: 70vh !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 0.5rem !important;
-  }
-  
-  /* L&M containers - positioned properly */
-  #inicio .zigzag__container:not(.desarrollo-web-text) {
-    position: relative !important;
-    margin-bottom: 0.5rem !important;
-    transform: scale(0.9) !important;
-  }
-  
-  #inicio .zigzag__container:not(.desarrollo-web-text):nth-child(2) {
-    display: none !important;
-  }
-  
-  /* HIDE DESARROLLO WEB and WEB in iPad - only show L&M */
-  #inicio .zigzag__container.desarrollo-web-text {
-    display: none !important;
-  }
-  
-  /* Hero content - finally in the right place! */
-  #inicio .text-center.mt-\[32rem\] {
-    position: relative !important;
-    margin-top: 2rem !important;
-    padding: 0 1rem !important;
-  }
-  
-  /* Override all the ridiculous margins */
-  #inicio .mt-\[32rem\],
-  #inicio .mt-\[36rem\],
-  #inicio .mt-\[60rem\],
-  #inicio .mt-72 {
-    margin-top: 0 !important;
-  }
-  
-  /* Adjust zigzag containers for tablet */
-  .zigzag__container {
-    gap: 35px;
-  }
-  
-  .zigzag__item {
-    height: 80px;
-    width: 80px;
-  }
-  
-  .zigzag__item span b {
-    font-size: 1.8em;
-  }
   
   /* Show mobile menu button on iPad */
   .md\:hidden.flex.items-center.gap-2.sm\:gap-4 {
@@ -1905,90 +1801,6 @@ details[open] .faq-summary::before {
   /* HIDE MOBILE MENU BUTTON */
   .md\:hidden.flex.items-center.gap-2.sm\:gap-4 {
     display: none !important;
-  }
-  
-  /* RESTORE ORIGINAL HERO CONTAINER */
-  #inicio .relative.z-10.mb-44 {
-    position: relative !important;
-    margin-top: 28px !important;
-    margin-bottom: 11rem !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 2px !important;
-  }
-  
-  /* SHOW ONLY FIRST ZIGZAG CONTAINERS IN PC - HIDE DUPLICATES */
-  #inicio .zigzag__container:nth-child(1) {
-    position: absolute !important;
-    display: flex !important;
-    gap: 38px !important;
-  }
-  
-  /* HIDE SECOND L&M */
-  #inicio .zigzag__container:nth-child(2) {
-    display: none !important;
-  }
-  
-  /* SHOW ONLY FIRST DESARROLLO WEB IN PC - HIDE DUPLICATE */
-  #inicio .zigzag__container:nth-child(5) {
-    position: absolute !important;
-    margin-top: 18rem !important;
-    display: flex !important;
-    gap: 38px !important;
-  }
-  
-  #inicio .zigzag__container:nth-child(6) {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    position: absolute !important;
-    left: -9999px !important;
-    top: -9999px !important;
-    z-index: -9999 !important;
-  }
-  
-  /* SHOW DESARROLLO WEB IN PC - FIRST ONLY */
-  #inicio .zigzag__container.desarrollo-web-text:not(.mt-\[36rem\]):nth-child(5) {
-    position: absolute !important;
-    margin-top: 18rem !important;
-    display: flex !important;
-    gap: 38px !important;
-  }
-  
-  /* NUCLEAR OPTION: Hide all desarrollo-web except the first one */
-  #inicio .zigzag__container.desarrollo-web-text:not(:nth-of-type(5)) {
-    display: none !important;
-  }
-  
-  /* SHOW FIRST WEB, HIDE SECOND */
-  #inicio .zigzag__container.desarrollo-web-text.mt-\[36rem\]:nth-child(7) {
-    position: absolute !important;
-    margin-top: 36rem !important;
-    display: flex !important;
-    gap: 38px !important;
-  }
-  
-  #inicio .zigzag__container.desarrollo-web-text.mt-\[36rem\]:nth-child(8) {
-    display: none !important;
-  }
-  
-  /* RESTORE HERO CONTENT POSITION - MORE DOWN IN PC */
-  #inicio .text-center.mt-\[32rem\] {
-    position: relative !important;
-    margin-top: 52rem !important;
-    padding: 0 1rem !important;
-  }
-  
-  /* RESTORE ORIGINAL SIZES */
-  .zigzag__item {
-    height: 100px !important;
-    width: 100px !important;
-  }
-  
-  .zigzag__item span b {
-    font-size: 2em !important;
   }
   
   /* HIDE MOBILE MENU */
@@ -2040,88 +1852,6 @@ details[open] .faq-summary::before {
   /* Hide desktop nav */
   .glass-nav .hidden.md\:flex {
     display: none !important;
-  }
-
-  /* HERO CONTAINER - same as iPad */
-  #inicio .relative.z-10.mb-44 {
-    position: relative !important;
-    margin-top: 26rem !important;
-    margin-bottom: 2rem !important;
-    min-height: 70vh !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 0.5rem !important;
-  }
-  
-  /* L&M containers - hide second duplicate */
-  #inicio .zigzag__container:not(.desarrollo-web-text) {
-    position: relative !important;
-    margin-bottom: 0.5rem !important;
-    transform: scale(0.9) !important;
-  }
-  
-  #inicio .zigzag__container:not(.desarrollo-web-text):nth-child(2) {
-    display: none !important;
-  }
-  
-  /* SHOW FIRST L&M, HIDE SECOND */
-  #inicio .zigzag__container:nth-child(2) {
-    display: none !important;
-  }
-  
-  /* SHOW FIRST DESARROLLO, HIDE SECOND - SAME SIZE AS L&M */
-  #inicio .zigzag__container:nth-child(5) {
-    position: relative !important;
-    margin: 1rem 0 !important;
-    transform: scale(0.9) !important;
-    display: flex !important;
-  }
-  
-  #inicio .zigzag__container:nth-child(6) {
-    display: none !important;
-  }
-  
-  /* SHOW FIRST WEB, HIDE SECOND - SAME SIZE AS L&M */
-  #inicio .zigzag__container:nth-child(7) {
-    position: relative !important;
-    margin: 0.5rem 0 !important;
-    transform: scale(0.9) !important;
-    display: flex !important;
-  }
-  
-  #inicio .zigzag__container:nth-child(8) {
-    display: none !important;
-  }
-  
-  /* Hero content - same positioning as iPad */
-  #inicio .text-center.mt-\[32rem\] {
-    position: relative !important;
-    margin-top: 2rem !important;
-    padding: 0 1rem !important;
-  }
-  
-  /* Override all the ridiculous margins */
-  #inicio .mt-\[32rem\],
-  #inicio .mt-\[36rem\],
-  #inicio .mt-\[60rem\],
-  #inicio .mt-72 {
-    margin-top: 0 !important;
-  }
-  
-  /* Adjust zigzag containers */
-  .zigzag__container {
-    gap: 35px;
-  }
-  
-  .zigzag__item {
-    height: 80px;
-    width: 80px;
-  }
-  
-  .zigzag__item span b {
-    font-size: 1.8em;
   }
   
   /* Show mobile menu button */
