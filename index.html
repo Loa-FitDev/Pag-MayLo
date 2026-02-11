@@ -155,7 +155,6 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" as="style">
     <!-- Preload critical images -->
-    <link rel="preload" href="assets/img/background-image.webp" as="image" fetchpriority="high">
     <link rel="preload" href="assets/img/MyL.png" as="image" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -251,12 +250,40 @@
     </header>
     <main id="main-content">
       <!-- Hero Section -->
-      <section id="inicio" class="h-screen w-full">
+      <section id="inicio" class="relative h-screen w-full overflow-hidden">
         <br>
         <!-- Background Gradient -->
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-raffia via-alabaster to-alabaster dark:from-rhino via-cloud-burst to-cloud-burst -z-10"></div>
 
-        <div class="h-screen w-full flex items-center justify-center">
+        <!-- Carrusel 3D como fondo del Hero -->
+        <div class="absolute inset-0 flex items-start justify-center pt-24 md:pt-32 lg:pt-40 z-0 pointer-events-none">
+          <div class="carousel-3d-container pointer-events-auto">
+            <div id="carousel3D" class="carousel-3d" style="transform: rotateY(-5340deg)">
+              <img src="/assets/img/salonDeBelleza.png"
+                style="transform: rotateY(0deg) translateZ(470px)" />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_18.26.03.png?v=1763857588"
+                style="transform: rotateY(60deg) translateZ(470px)" />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_18.38.59.png?v=1763858366"
+                style="transform: rotateY(120deg) translateZ(470px)" />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_17.33.02.png?v=1763854423"
+                style="transform: rotateY(180deg) translateZ(470px)" />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_15.07.48.png?v=1763845766"
+                style="transform: rotateY(240deg) translateZ(470px)" />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_14.12.08.png?v=1763843693"
+                style="transform: rotateY(300deg) translateZ(470px)" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Capa oscura sobre el carrusel para destacar el contenido -->
+        <div class="absolute inset-0 bg-black/45 dark:bg-black/70 z-[5] pointer-events-none"></div>
+
+        <div class="h-screen w-full flex items-center justify-center relative z-10">
             <div class="h-full grid grid-cols-1 grid-rows-12 gap-5 md:gap-0">
                 <div class="h-full flex items-center justify-center row-span-5 md:row-span-9">
                     <div class="h-full grid grid-cols-1 grid-rows-3">
@@ -390,6 +417,257 @@
                     </div>
                 </div>
             </div>
+        </div>
+      </section> 
+      <style>
+            /* ================= CARRUSEL 3D ================= */
+            .carousel-3d-container {
+              width: 100%;
+              height: 600px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: 20px 0;
+              perspective: 1500px;
+            }
+            .carousel-3d {
+              width: 40%;
+              height: 400px;
+              position: relative;
+              transform-style: preserve-3d;
+              transition: transform 1s ease;
+            }
+            .carousel-3d img {
+              position: absolute;
+              width: 100% !important;
+              height: 100% !important;
+              object-fit: cover !important;
+              background: transparent !important;
+              border-radius: 16px;
+              box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            }
+            .carousel-buttons {
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              gap: 24px;
+              margin-top: 80px;
+            }
+            .carousel-buttons button {
+              position: relative;
+              padding: 14px 32px;
+              background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+              border: 2px solid rgba(255, 255, 255, 0.3);
+              color: white;
+              cursor: pointer;
+              font-size: 16px;
+              font-weight: 600;
+              border-radius: 50px;
+              backdrop-filter: blur(10px);
+              -webkit-backdrop-filter: blur(10px);
+              transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+              user-select: none;
+              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+              letter-spacing: 0.5px;
+              overflow: hidden;
+            }
+            .carousel-buttons button::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent);
+              opacity: 0;
+              transition: opacity 0.4s ease;
+            }
+            .carousel-buttons button:hover {
+              background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+              border-color: rgba(255, 255, 255, 0.5);
+              transform: translateY(-2px);
+              box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            }
+            .carousel-buttons button:hover::before {
+              opacity: 1;
+            }
+            .carousel-buttons button:active {
+              transform: translateY(0);
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            }
+            /* Tablets grandes y pantallas medianas (ej: 980x1024) */
+            @media (max-width: 1024px) {
+              .carousel-3d-container {
+                height: 420px;
+                perspective: 1200px;
+                padding-top: 2.5rem;
+              }
+              .carousel-3d {
+                width: min(420px, 80vw);
+                height: 280px;
+              }
+              .carousel-buttons {
+                margin-top: 60px;
+                gap: 20px;
+              }
+              .carousel-buttons button {
+                padding: 12px 28px;
+                font-size: 15px;
+              }
+            }
+            /* Tablets verticales (ej: iPad 768x1024) */
+            @media (max-width: 768px) {
+              .carousel-3d-container {
+                height: 340px;
+                perspective: 1000px;
+                padding-top: 2.5rem;
+              }
+              .carousel-3d {
+                width: 75vw;
+                max-width: 360px;
+                height: 230px;
+              }
+              .carousel-buttons {
+                margin-top: 45px;
+                gap: 16px;
+                flex-wrap: wrap;
+              }
+              .carousel-buttons button {
+                padding: 11px 22px;
+                font-size: 14px;
+                font-weight: 600;
+              }
+            }
+            /* Móviles */
+            @media (max-width: 480px) {
+              .carousel-3d-container {
+                height: 280px;
+                perspective: 800px;
+              }
+              .carousel-3d {
+                width: 80vw;
+                max-width: 280px;
+                height: 180px;
+              }
+              .carousel-buttons {
+                margin-top: 35px;
+                gap: 12px;
+              }
+              .carousel-buttons button {
+                padding: 9px 18px;
+                font-size: 13px;
+                border-radius: 40px;
+              }
+            }
+            /* Móviles muy pequeños */
+            @media (max-width: 360px) {
+              .carousel-3d-container {
+                height: 240px;
+              }
+              .carousel-3d {
+                width: 85vw;
+                height: 150px;
+              }
+              .carousel-buttons {
+                margin-top: 30px;
+                gap: 10px;
+              }
+              .carousel-buttons button {
+                padding: 8px 16px;
+                font-size: 12px;
+              }
+            }
+          </style>
+          <script>
+              (function () {
+                try {
+                  const carousel = document.getElementById("carousel3D");
+                  if (!carousel) return;
+
+                  const items = carousel.children;
+                  const total = items.length;
+                  if (!total) return;
+
+                  let angle = 0;
+                  const step = 360 / total;
+                  let autoRotateTimer = null;
+                  let resizeRAF = null;
+
+                  function getRadius() {
+                    const width = window.innerWidth;
+                    if (width <= 360) return 220;   // móviles muy pequeños
+                    if (width <= 480) return 260;   // móviles
+                    if (width <= 768) return 360;   // tablets verticales (ej: 768x1024)
+                    if (width <= 1024) return 520;  // tablets horizontales / 980x1024
+                    return 700;                     // desktop
+                  }
+
+                  function positionCarousel() {
+                    try {
+                      const radius = getRadius();
+                      for (let i = 0; i < total; i++) {
+                        items[i].style.transform =
+                          `rotateY(${step * i}deg) translateZ(${radius}px)`;
+                      }
+                    } catch (_) { }
+                  }
+
+                  function rotate(dir) {
+                    try {
+                      angle += dir * step;
+                      carousel.style.transform = `rotateY(${angle}deg)`;
+                    } catch (_) { }
+                  }
+
+                  function resetAutoRotate() {
+                    if (autoRotateTimer) {
+                      clearTimeout(autoRotateTimer);
+                      autoRotateTimer = null;
+                    }
+                    autoRotateTimer = setTimeout(function () {
+                      rotate(-1);
+                      resetAutoRotate();
+                    }, 5000);
+                  }
+
+                  positionCarousel();
+                  resetAutoRotate();
+
+                  window.addEventListener(
+                    "resize",
+                    function () {
+                      if (resizeRAF) return;
+                      resizeRAF = requestAnimationFrame(function () {
+                        resizeRAF = null;
+                        positionCarousel();
+                        carousel.style.transform = `rotateY(${angle}deg)`;
+                      });
+                    },
+                    { passive: true },
+                  );
+
+                  const btnPrev = document.getElementById("btnPrev");
+                  const btnNext = document.getElementById("btnNext");
+
+                  if (btnPrev) {
+                    btnPrev.addEventListener("click", function () {
+                      rotate(1);
+                      resetAutoRotate();
+                    });
+                  }
+
+                  if (btnNext) {
+                    btnNext.addEventListener("click", function () {
+                      rotate(-1);
+                      resetAutoRotate();
+                    });
+                  }
+                } catch (_) { }
+              })();
+            </script>
+          </div>
         </div>
       </section>
 
@@ -904,280 +1182,9 @@
         </div>
       </section>
 
-      <section id="shopify-section-template--25616838852898__hero_qbXGjC" class="shopify-section hero-wrapper pt-24 section-wrapper" style="height: 100vh; min-height: 100vh">
-        <div class="hero__content-wrapper layout-panel-flex layout-panel-flex--column mobile-column section-content-wrapper page-width"
-          style="--flex-direction: column; --flex-wrap: nowrap; --flex-wrap-mobile: wrap; --gap: 16px; --horizontal-alignment: center; --vertical-alignment: center; --vertical-alignment-mobile: center;">
-          <style>
-            /* ================= CARRUSEL 3D ================= */
-            .carousel-3d-container {
-              width: 100%;
-              height: 600px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              margin: 20px 0;
-              perspective: 1500px;
-            }
-            .carousel-3d {
-              width: 40%;
-              height: 400px;
-              position: relative;
-              transform-style: preserve-3d;
-              transition: transform 1s ease;
-            }
-            .carousel-3d img {
-              position: absolute;
-              width: 100% !important;
-              height: 100% !important;
-              object-fit: cover !important;
-              background: transparent !important;
-              border-radius: 16px;
-              box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-            }
-            .carousel-buttons {
-              width: 100%;
-              display: flex;
-              justify-content: center;
-              gap: 24px;
-              margin-top: 80px;
-            }
-            .carousel-buttons button {
-              position: relative;
-              padding: 14px 32px;
-              background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
-              border: 2px solid rgba(255, 255, 255, 0.3);
-              color: white;
-              cursor: pointer;
-              font-size: 16px;
-              font-weight: 600;
-              border-radius: 50px;
-              backdrop-filter: blur(10px);
-              -webkit-backdrop-filter: blur(10px);
-              transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-              user-select: none;
-              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2),
-              inset 0 1px 0 rgba(255, 255, 255, 0.2);
-              letter-spacing: 0.5px;
-              overflow: hidden;
-            }
-            .carousel-buttons button::before {
-              content: '';
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent);
-              opacity: 0;
-              transition: opacity 0.4s ease;
-            }
-            .carousel-buttons button:hover {
-              background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
-              border-color: rgba(255, 255, 255, 0.5);
-              transform: translateY(-2px);
-              box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3),
-              inset 0 1px 0 rgba(255, 255, 255, 0.3);
-            }
-            .carousel-buttons button:hover::before {
-              opacity: 1;
-            }
-            .carousel-buttons button:active {
-              transform: translateY(0);
-              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            }
-            /* Tablets grandes y pantallas medianas */
-            @media (max-width: 1024px) {
-              .carousel-3d-container {
-                height: 450px;
-                perspective: 1200px;
-              }
-              .carousel-3d {
-                width: 450px;
-                height: 300px;
-              }
-              .carousel-buttons {
-                margin-top: 60px;
-                gap: 20px;
-              }
-              .carousel-buttons button {
-                padding: 12px 28px;
-                font-size: 15px;
-              }
-            }
-            /* Tablets pequeñas */
-            @media (max-width: 768px) {
-              .carousel-3d-container {
-                height: 350px;
-                perspective: 1000px;
-              }
-              .carousel-3d {
-                width: 75vw;
-                max-width: 350px;
-                height: 230px;
-              }
-              .carousel-buttons {
-                margin-top: 45px;
-                gap: 16px;
-                flex-wrap: wrap;
-              }
-              .carousel-buttons button {
-                padding: 11px 22px;
-                font-size: 14px;
-                font-weight: 600;
-              }
-            }
-            /* Móviles */
-            @media (max-width: 480px) {
-              .carousel-3d-container {
-                height: 280px;
-                perspective: 800px;
-              }
-              .carousel-3d {
-                width: 80vw;
-                max-width: 280px;
-                height: 180px;
-              }
-              .carousel-buttons {
-                margin-top: 35px;
-                gap: 12px;
-              }
-              .carousel-buttons button {
-                padding: 9px 18px;
-                font-size: 13px;
-                border-radius: 40px;
-              }
-            }
-            /* Móviles muy pequeños */
-            @media (max-width: 360px) {
-              .carousel-3d-container {
-                height: 240px;
-              }
-              .carousel-3d {
-                width: 85vw;
-                height: 150px;
-              }
-              .carousel-buttons {
-                margin-top: 30px;
-                gap: 10px;
-              }
-              .carousel-buttons button {
-                padding: 8px 16px;
-                font-size: 12px;
-              }
-            }
-          </style>
-          <div>
-            <div class="carousel-3d-container">
-              <div id="carousel3D" class="carousel-3d" style="transform: rotateY(-5340deg)">
-                <img src="/assets/img/salonDeBelleza.png"
-                  style="transform: rotateY(0deg) translateZ(470px)" />
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_18.26.03.png?v=1763857588"
-                  style="transform: rotateY(60deg) translateZ(470px)" />
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_18.38.59.png?v=1763858366"
-                  style="transform: rotateY(120deg) translateZ(470px)" />
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_17.33.02.png?v=1763854423"
-                  style="transform: rotateY(180deg) translateZ(470px)" />
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_15.07.48.png?v=1763845766"
-                  style="transform: rotateY(240deg) translateZ(470px)" />
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_14.12.08.png?v=1763843693"
-                  style="transform: rotateY(300deg) translateZ(470px)" />
-              </div>
-            </div>
-            <script>
-              (function () {
-                try {
-                  const carousel = document.getElementById("carousel3D");
-                  if (!carousel) return;
+      
+      
 
-                  const items = carousel.children;
-                  const total = items.length;
-                  if (!total) return;
-
-                  let angle = 0;
-                  const step = 360 / total;
-                  let autoRotateTimer = null;
-                  let resizeRAF = null;
-
-                  function getRadius() {
-                    const width = window.innerWidth;
-                    if (width <= 360) return 220;
-                    if (width <= 480) return 270;
-                    if (width <= 768) return 700;
-                    if (width <= 1024) return 700;
-                    return 700;
-                  }
-
-                  function positionCarousel() {
-                    try {
-                      const radius = getRadius();
-                      for (let i = 0; i < total; i++) {
-                        items[i].style.transform =
-                          `rotateY(${step * i}deg) translateZ(${radius}px)`;
-                      }
-                    } catch (_) { }
-                  }
-
-                  function rotate(dir) {
-                    try {
-                      angle += dir * step;
-                      carousel.style.transform = `rotateY(${angle}deg)`;
-                    } catch (_) { }
-                  }
-
-                  function resetAutoRotate() {
-                    if (autoRotateTimer) {
-                      clearTimeout(autoRotateTimer);
-                      autoRotateTimer = null;
-                    }
-                    autoRotateTimer = setTimeout(function () {
-                      rotate(-1);
-                      resetAutoRotate();
-                    }, 5000);
-                  }
-
-                  positionCarousel();
-                  resetAutoRotate();
-
-                  window.addEventListener(
-                    "resize",
-                    function () {
-                      if (resizeRAF) return;
-                      resizeRAF = requestAnimationFrame(function () {
-                        resizeRAF = null;
-                        positionCarousel();
-                        carousel.style.transform = `rotateY(${angle}deg)`;
-                      });
-                    },
-                    { passive: true },
-                  );
-
-                  const btnPrev = document.getElementById("btnPrev");
-                  const btnNext = document.getElementById("btnNext");
-
-                  if (btnPrev) {
-                    btnPrev.addEventListener("click", function () {
-                      rotate(1);
-                      resetAutoRotate();
-                    });
-                  }
-
-                  if (btnNext) {
-                    btnNext.addEventListener("click", function () {
-                      rotate(-1);
-                      resetAutoRotate();
-                    });
-                  }
-                } catch (_) { }
-              })();
-            </script>
-          </div>
-        </div>
-      </section>
     </main>
     <footer class="bg-primary text-textdark">
       <div class="max-w-6xl mx-auto px-6 py-16 pb-1">
