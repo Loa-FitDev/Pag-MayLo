@@ -260,22 +260,22 @@
           <div class="carousel-3d-container pointer-events-auto">
             <div id="carousel3D" class="carousel-3d" style="transform: rotateY(-5340deg)">
               <img src="/assets/img/salonDeBelleza.png" alt="Salón de Belleza"
-                style="transform: rotateY(0deg) translateZ(470px)" />
+                style="transform: rotateY(0deg) translateZ(330px)" />
               <img alt="Restaurante"
                 src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_18.26.03.png?v=1763857588"
-                style="transform: rotateY(60deg) translateZ(470px)" />
+                style="transform: rotateY(60deg) translateZ(330px)" />
               <img alt="Bar"
                 src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_18.38.59.png?v=1763858366"
-                style="transform: rotateY(120deg) translateZ(470px)" />
+                style="transform: rotateY(120deg) translateZ(330px)" />
               <img alt="Cafetería"
                 src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_17.33.02.png?v=1763854423"
-                style="transform: rotateY(180deg) translateZ(470px)" />
+                style="transform: rotateY(180deg) translateZ(330px)" />
               <img alt="Cafetería"
                 src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_15.07.48.png?v=1763845766"
-                style="transform: rotateY(240deg) translateZ(470px)" />
+                style="transform: rotateY(240deg) translateZ(330px)" />
               <img alt="Cafetería"
                 src="https://cdn.shopify.com/s/files/1/0968/8403/1778/files/Captura_de_pantalla_2025-11-22_a_la_s_14.12.08.png?v=1763843693"
-                style="transform: rotateY(300deg) translateZ(470px)" />
+                style="transform: rotateY(300deg) translateZ(330px)" />
             </div>
           </div>
         </div>
@@ -428,11 +428,11 @@
               justify-content: center;
               align-items: center;
               padding-top: 2.5rem;
-              perspective: 1500px;
+              perspective: 1300px;
             }
             .carousel-3d {
-              width: 40%;
-              height: 400px;
+              width: min(560px, 34vw);
+              height: 340px;
               position: relative;
               transform-style: preserve-3d;
               transition: transform 1s ease;
@@ -444,6 +444,13 @@
               object-fit: cover !important;
               background: transparent !important;
               border-radius: 16px;
+              overflow: hidden;
+              -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+              -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+              -webkit-clip-path: inset(0 round 16px);
+              clip-path: inset(0 round 16px);
               box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
             }
             .carousel-buttons {
@@ -501,13 +508,13 @@
             /* Tablets grandes y pantallas medianas (ej: 980x1024) */
             @media (max-width: 1024px) {
               .carousel-3d-container {
-                height: 420px;
-                perspective: 1200px;
+                height: 390px;
+                perspective: 1100px;
                 padding-top: 2.5rem;
               }
               .carousel-3d {
-                width: min(420px, 80vw);
-                height: 280px;
+                width: min(380px, 68vw);
+                height: 240px;
               }
               .carousel-buttons {
                 margin-top: 60px;
@@ -521,14 +528,13 @@
             /* Tablets verticales (ej: iPad 768x1024) */
             @media (max-width: 768px) {
               .carousel-3d-container {
-                height: 340px;
-                perspective: 1000px;
+                height: 320px;
+                perspective: 950px;
                 padding-top: 2.5rem;
               }
               .carousel-3d {
-                width: 75vw;
-                max-width: 360px;
-                height: 230px;
+                width: min(320px, 72vw);
+                height: 210px;
               }
               .carousel-buttons {
                 margin-top: 45px;
@@ -545,12 +551,11 @@
             @media (max-width: 480px) {
               .carousel-3d-container {
                 height: 280px;
-                perspective: 1200px;
+                perspective: 820px;
               }
               .carousel-3d {
-                width: 100vw;
-                max-width: 100vw;
-                height: auto;
+                width: min(270px, 78vw);
+                height: 180px;
               }
               .carousel-buttons {
                 margin-top: 35px;
@@ -565,13 +570,12 @@
             /* Móviles muy pequeños */
             @media (max-width: 360px) {
               .carousel-3d-container {
-                height: 280px;
-                perspective: 1200px;
+                height: 250px;
+                perspective: 760px;
               }
               .carousel-3d {
-                width: 100vw;
-                max-width: 100vw;
-                height: auto;
+                width: min(230px, 82vw);
+                height: 150px;
               }
               .carousel-buttons {
                 margin-top: 35px;
@@ -601,11 +605,11 @@
 
                   function getRadius() {
                     const width = window.innerWidth;
-                    if (width <= 360) return 220;   // móviles muy pequeños
-                    if (width <= 480) return 260;   // móviles
-                    if (width <= 768) return 360;   // tablets verticales (ej: 768x1024)
-                    if (width <= 1024) return 520;  // tablets horizontales / 980x1024
-                    return 580;                     // desktop
+                    if (width <= 360) return 210;   // móviles muy pequeños
+                    if (width <= 480) return 245;   // móviles
+                    if (width <= 768) return 315;   // tablets verticales (ej: 768x1024)
+                    if (width <= 1024) return 400;  // tablets horizontales / 980x1024
+                    return 500;                     // desktop
                   }
 
                   function positionCarousel() {
