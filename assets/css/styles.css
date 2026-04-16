@@ -1871,4 +1871,76 @@ details[open] .faq-summary::before {
   }
 }
 
+/* ================= PRELOADER / LOADING SCREEN ================= */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.dark #preloader {
+  background-color: #203553;
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-logo img {
+  animation: pulse-logo 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-logo {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Loading dots animation */
+#preloader .animate-pulse {
+  animation: bounce-dots 1.4s ease-in-out infinite both;
+  width: 16px;
+  height: 16px;
+}
+
+#preloader .animate-pulse:nth-child(1) {
+  animation-delay: 0s;
+}
+
+#preloader .animate-pulse:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+#preloader .animate-pulse:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes bounce-dots {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Ocultar preloader cuando se agrega la clase */
+#preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 
